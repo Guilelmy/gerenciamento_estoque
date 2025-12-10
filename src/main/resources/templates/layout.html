@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGE - Sistema de Gestão de Estoque</title>
+    <meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+    <style>
+        .htmx-indicator {
+            opacity: 0;
+            transition: opacity 200ms ease-in;
+        }
+
+        .htmx-request .htmx-indicator {
+            opacity: 1;
+        }
+
+        .htmx-request.htmx-indicator {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal flex flex-col min-h-screen" hx-boost="true">
+
+    <nav class="bg-slate-800 p-4 text-white shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold flex items-center gap-2" hx-target="#main-content"
+                hx-select="#main-content" hx-swap="outerHTML">
+                Gerenciamento de Estoque
+            </a>
+
+            <div class="hidden md:flex space-x-6" hx-target="#main-content" hx-select="#main-content"
+                hx-swap="outerHTML">
+
+                <a href="/" class="hover:text-blue-300 transition"
+                    th:classappend="${currentPage == 'dashboard'} ? 'text-blue-400 font-bold' : ''">
+                    Dashboard
+                </a>
+
+                <a href="/fornecedores" class="hover:text-blue-300 transition"
+                    th:classappend="${currentPage == 'fornecedores'} ? 'text-blue-400 font-bold' : ''">
+                    Fornecedores
+                </a>
+
+                <a href="/produtos" class="hover:text-blue-300 transition"
+                    th:classappend="${currentPage == 'produtos'} ? 'text-blue-400 font-bold' : ''">
+                    Produtos
+                </a>
+
+                <a href="/estoque" class="hover:text-blue-300 transition"
+                    th:classappend="${currentPage == 'estoque'} ? 'text-blue-400 font-bold' : ''">
+                    Estoque
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-300 hidden sm:inline" sec:authorize="isAuthenticated()">
+                    Olá, <span class="font-bold text-white" sec:authentication="principal.empresa.nome">Empresa</span>
+                </span>
+
+                <form th:action="@{/logout}" method="post" class="inline">
+                    <button type="submit"
+                        class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm transition text-white"
+                        hx-boost="false"> Sair
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="alert-container" class="fixed top-20 right-5 z-50 w-full max-w-sm flex flex-col gap-2 pointer-events-none">
+    </div>
+
+    <main class="container mx-auto flex-grow p-6">
+        <div id="main-content" layout:fragment="conteudo">
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-gray-400 py-6 mt-auto">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2025 Sistema de Gestão de Estoque</p>
+        </div>
+    </footer>
+    <script>
+        document.body.addEventListener('htmx:configRequest', (evt) => {
+            const csrfHeader = document.querySelector('meta[name="_csrf_header"]');
+            const csrfToken = document.querySelector('meta[name="_csrf"]');
+            
+            if (csrfHeader && csrfToken) {
+                evt.detail.headers[csrfHeader.getAttribute('content')] = csrfToken.getAttribute('content');
+            }
+        });
+    </script>
+    <script>
+        if (!window.toastListenerAdded) {
+            document.body.addEventListener("mostrarMensagem", function (evt) {
+                const tipo = evt.detail.tipo;
+                const texto = evt.detail.mensagem;
+                let corBg = tipo === 'erro' ? 'bg-red-500' : 'bg-green-500';
+                let icone = tipo === 'erro' ? '❌' : '✅';
+
+                const toast = document.createElement("div");
+                toast.className = `${corBg} text-white px-6 py-4 rounded shadow-lg flex items-center gap-3 transform transition-all duration-300 translate-x-full opacity-0 pointer-events-auto`;
+                toast.innerHTML = `<span class="text-lg">${icone}</span><p class="font-bold text-sm">${texto}</p>`;
+
+                const container = document.getElementById("alert-container");
+                container.appendChild(toast);
+
+                requestAnimationFrame(() => { toast.classList.remove("translate-x-full", "opacity-0"); });
+                setTimeout(() => {
+                    toast.classList.add("translate-x-full", "opacity-0");
+                    setTimeout(() => { toast.remove(); }, 300);
+                }, 4000);
+            });
+            window.toastListenerAdded = true;
+        }
+    </script>
+</body>
+
+</html>

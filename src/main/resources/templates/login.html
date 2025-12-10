@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        // Se esta página for carregada dentro de outra (via HTMX ou Frame), recarrega a janela inteira
+        if (window.top !== window.self || document.getElementById('main-content')) {
+            window.top.location = window.self.location.href;
+        }
+    </script>
+</head>
+<body class="bg-slate-900 h-screen w-screen flex items-center justify-center overflow-hidden">
+
+    <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md mx-4">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">SGE</h1>
+            <p class="text-gray-500">Gestão de Estoque</p>
+        </div>
+
+        <div th:if="${param.error}" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 text-sm">
+            <p class="font-bold">Erro</p>
+            <p>Credenciais inválidas.</p>
+        </div>
+
+        <div th:if="${param.logout}" class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4 text-sm">
+            <p>Você saiu do sistema.</p>
+        </div>
+        
+        <div th:if="${param.cadastrado}" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 text-sm">
+            <p>Sucesso! Faça seu login.</p>
+        </div>
+
+        <form th:action="@{/login}" method="post" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">E-mail</label>
+                <input type="email" name="username" required autofocus placeholder="admin@empresa.com"
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Senha</label>
+                <input type="password" name="password" required placeholder="••••••"
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition">
+                Entrar
+            </button>
+        </form>
+
+        <div class="mt-6 text-center border-t pt-4">
+            <p class="text-sm text-gray-600">
+                Novo por aqui? 
+                <a href="/cadastro" class="font-medium text-blue-600 hover:text-blue-500">Criar conta</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

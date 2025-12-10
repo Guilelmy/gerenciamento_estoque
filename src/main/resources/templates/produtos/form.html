@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+
+<div id="main-content" layout:fragment="conteudo">
+
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md border-t-4 border-blue-600">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 border-b pb-2"
+            th:text="${produto.id == null ? 'Novo Produto' : 'Editar Produto'}">
+        </h2>
+
+        <form hx-post="/produtos/salvar" 
+              hx-target="#main-content" 
+              hx-select="#main-content" 
+              hx-swap="outerHTML"
+              hx-disabled-elt="button[type='submit']"
+              th:object="${produto}" 
+              class="space-y-4">
+            
+            <input type="hidden" th:field="*{id}" />
+
+            <div>
+                <label class="block text-sm font-bold text-gray-700">Nome do Produto</label>
+                <input type="text" th:field="*{nome}" required 
+                       class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500"
+                       placeholder="Ex: Teclado Mecânico">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700">Preço (R$)</label>
+                    <input type="number" step="0.01" min="0" th:field="*{preco}" required 
+                           class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500"
+                           placeholder="0,00">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700">Fornecedor</label>
+                    <select th:field="*{fornecedor}" required 
+                            class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500 bg-white">
+                        <option value="" disabled selected>Selecione um fornecedor...</option>
+                        
+                        <option th:each="f : ${listaFornecedores}" 
+                                th:value="${f.id}" 
+                                th:text="${f.nome}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold text-gray-700">Descrição</label>
+                <textarea th:field="*{descricao}" rows="3" 
+                          class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500"
+                          placeholder="Detalhes técnicos do produto..."></textarea>
+            </div>
+
+            <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-end gap-3">
+                <a href="/produtos" 
+                   hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
+                   class="px-5 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition cursor-pointer">
+                   Cancelar
+                </a>
+                
+                <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow transition font-bold">
+                    Salvar Produto
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <div th:fragment="modal-novo">
+        <div class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" 
+                     onclick="document.getElementById('modal-container').innerHTML = ''"></div>
+
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Adicionar ao Estoque</h3>
+                        
+                        <form hx-post="/estoque/salvar-novo" 
+                              hx-target="#tabela-container" 
+                              hx-swap="innerHTML"
+                              hx-on::after-request="if(event.detail.successful) document.getElementById('modal-container').innerHTML = ''">
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Selecione o Produto</label>
+                                <select name="produtoId" required class="w-full border rounded p-2 bg-white">
+                                    <option value="">Escolha...</option>
+                                    <option th:each="p : ${produtos}" th:value="${p.id}" th:text="${p.nome}"></option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Quantidade Inicial</label>
+                                    <input type="number" name="quantidadeInicial" value="0" min="0" required class="w-full border rounded p-2">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Estoque Mínimo</label>
+                                    <input type="number" name="quantidadeMinima" value="5" min="0" required class="w-full border rounded p-2">
+                                </div>
+                            </div>
+
+                            <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                                <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 sm:col-start-2 sm:text-sm">
+                                    Salvar
+                                </button>
+                                <button type="button" 
+                                        onclick="document.getElementById('modal-container').innerHTML = ''"
+                                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 sm:mt-0 sm:col-start-1 sm:text-sm">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:fragment="modal-movimentacao">
+        <div class="fixed inset-0 z-50 overflow-y-auto">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75" 
+                     onclick="document.getElementById('modal-container').innerHTML = ''"></div>
+
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6">
+                        
+                        <h3 class="text-lg font-medium text-gray-900 mb-2 text-center">
+                            <span th:if="${tipo == 'entrada'}" class="text-green-600">Entrada de Estoque</span>
+                            <span th:if="${tipo == 'saida'}" class="text-red-600">Saída de Estoque</span>
+                        </h3>
+                        
+                        <p class="text-center text-gray-500 text-sm mb-4 font-bold" th:text="${item.produto.nome}"></p>
+
+                        <form hx-post="/estoque/movimentar" 
+                              hx-target="#tabela-container" 
+                              hx-swap="innerHTML"
+                              hx-on::after-request="if(event.detail.successful) document.getElementById('modal-container').innerHTML = ''">
+                            
+                            <input type="hidden" name="itemId" th:value="${item.id}">
+                            <input type="hidden" name="tipo" th:value="${tipo}">
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 text-center mb-2">Quantidade</label>
+                                <input type="number" name="quantidade" min="1" required autofocus
+                                       class="w-full border-2 border-gray-300 rounded-lg p-3 text-center text-xl font-bold focus:border-blue-500 focus:ring-0">
+                            </div>
+
+                            <div class="flex gap-2">
+                                <button type="button" 
+                                        onclick="document.getElementById('modal-container').innerHTML = ''"
+                                        class="flex-1 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">
+                                    Cancelar
+                                </button>
+                                <button type="submit" 
+                                        class="flex-1 py-2 text-white rounded font-bold shadow transition"
+                                        th:classappend="${tipo == 'entrada'} ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700'">
+                                    Confirmar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div th:fragment="modal-config">
+        <div class="fixed inset-0 z-50 overflow-y-auto">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75" 
+                     onclick="document.getElementById('modal-container').innerHTML = ''"></div>
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+                <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Configurar Item</h3>
+                        
+                        <form hx-post="/estoque/salvar-config" 
+                              hx-target="#tabela-container" 
+                              hx-swap="innerHTML"
+                              hx-on::after-request="if(event.detail.successful) document.getElementById('modal-container').innerHTML = ''">
+                            
+                            <input type="hidden" name="itemId" th:value="${item.id}">
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Produto</label>
+                                <input type="text" disabled th:value="${item.produto.nome}" class="w-full bg-gray-100 border rounded p-2 text-gray-500">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Estoque Mínimo</label>
+                                <input type="number" name="quantidadeMinima" th:value="${item.quantidadeMinima}" min="0" required class="w-full border rounded p-2">
+                            </div>
+
+                            <div class="flex justify-end gap-2">
+                                <button type="button" onclick="document.getElementById('modal-container').innerHTML = ''" class="px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">Cancelar</button>
+                                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

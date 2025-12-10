@@ -27,7 +27,13 @@ public class ItemEstoque {
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
+    
+    @NotNull
+    @Min(0)
+    @Column(name = "quantidade_minima", columnDefinition = "integer default 0")
+    private Integer quantidadeMinima;
 
+    @NotNull
     @Min(0)
     @Column(name = "quantidade_atual", nullable = false)
     private Integer quantidadeAtual;
