@@ -20,23 +20,19 @@ public class LoginController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // Tela de Login
     @GetMapping("/login")
     public String login() {
-        return "login"; // Vai procurar login.html
+        return "login";
     }
 
-    // Tela de Cadastro
     @GetMapping("/cadastro")
     public String cadastro(Model model) {
         model.addAttribute("empresa", new Empresa());
-        return "cadastro"; // Vai procurar cadastro.html
+        return "cadastro";
     }
 
-    // Processar o Cadastro
     @PostMapping("/cadastro")
     public String processarCadastro(Empresa empresa, Model model) {
-        // Verifica se já existe
         if (empresaRepository.existsByEmail(empresa.getEmail())) {
             model.addAttribute("erro", "Este e-mail já está cadastrado.");
             return "cadastro";
@@ -45,14 +41,9 @@ public class LoginController {
             model.addAttribute("erro", "Este CNPJ já está cadastrado.");
             return "cadastro";
         }
-
-        // Criptografa a senha antes de salvar
         empresa.setSenha(passwordEncoder.encode(empresa.getSenha()));
-
         empresaRepository.save(empresa);
-
         return "redirect:/login?cadastrado=true";
     }
 
-    
 }

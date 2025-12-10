@@ -18,7 +18,7 @@ public class EmpresaUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Empresa empresa = empresaRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Empresa não encontrada: " + email));
-        
+
         return new EmpresaUserDetails(empresa);
     }
 }

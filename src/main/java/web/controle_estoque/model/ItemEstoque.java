@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "item_estoque", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"empresa_id", "produto_id"})
+        @UniqueConstraint(columnNames = { "empresa_id", "produto_id" })
 })
 public class ItemEstoque {
 
@@ -27,7 +27,7 @@ public class ItemEstoque {
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
-    
+
     @NotNull
     @Min(0)
     @Column(name = "quantidade_minima", columnDefinition = "integer default 0")
@@ -40,7 +40,7 @@ public class ItemEstoque {
 
     @Column(name = "data_atualizacao")
     private LocalDate dataAtualizacao;
-    
+
     @PrePersist
     @PreUpdate
     public void preAtualizacao() {

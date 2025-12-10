@@ -28,7 +28,6 @@ public class ProdutoService {
 
     public Produto buscarPorId(Long id) {
         Empresa empresa = securityService.getEmpresaLogada();
-        // Garante que só busca se for da empresa logada
         return repository.findByIdAndEmpresaId(id, empresa.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Produto não encontrado ou acesso negado ID: " + id));
     }
@@ -36,17 +35,17 @@ public class ProdutoService {
     @Transactional
     public void salvar(Produto produto) {
         Empresa empresa = securityService.getEmpresaLogada();
-        
+
         produto.setEmpresa(empresa); // Vínculo Automático
         produto.setAtivo(true);
-        
+
         repository.save(produto);
     }
 
     @Transactional
     public boolean desativar(Long id) {
         Empresa empresa = securityService.getEmpresaLogada();
-        
+
         return repository.findByIdAndEmpresaId(id, empresa.getId()).map(produto -> {
             produto.setAtivo(false); // Soft Delete
             repository.save(produto);

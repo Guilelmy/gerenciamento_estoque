@@ -19,20 +19,11 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("currentPage", "dashboard");
-
-        // CORREÇÃO: Usando Service. O Service pega a empresa logada.
         model.addAttribute("totalProdutos", produtoService.contarAtivos());
-        
-        // CORREÇÃO: Certifique-se de ter criado o método contarAtivos() no FornecedorService
-        // Se não tiver, crie lá retornando repository.countByEmpresaIdAndAtivoTrue(empresa.getId())
-        model.addAttribute("totalFornecedores", fornecedorService.contarAtivos());        
-        
-        // CORREÇÃO: Usando métodos do Service criados acima
+        model.addAttribute("totalFornecedores", fornecedorService.contarAtivos());
         model.addAttribute("totalItensCriticos", itemEstoqueService.contarCriticos());
-        
         Double valorTotal = itemEstoqueService.valorTotalEstoque();
         model.addAttribute("valorTotalEstoque", valorTotal != null ? valorTotal : 0.0);
-
         return "index";
     }
 }

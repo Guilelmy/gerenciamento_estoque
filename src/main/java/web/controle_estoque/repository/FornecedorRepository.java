@@ -11,18 +11,16 @@ import java.util.Optional;
 @Repository
 public interface FornecedorRepository extends JpaRepository<Fornecedor, Long> {
 
-    // Versão Paginada (Para a Tabela)
     Page<Fornecedor> findByEmpresaIdAndAtivoTrue(Long empresaId, Pageable pageable);
-    
-    // CORREÇÃO DO ERRO: Versão Lista (Para o Select de Produtos)
+
     List<Fornecedor> findByEmpresaIdAndAtivoTrue(Long empresaId);
 
-    Page<Fornecedor> findByEmpresaIdAndNomeContainingIgnoreCaseAndAtivoTrue(Long empresaId, String nome, Pageable pageable);
-    
+    Page<Fornecedor> findByEmpresaIdAndNomeContainingIgnoreCaseAndAtivoTrue(Long empresaId, String nome,
+            Pageable pageable);
+
     long countByEmpresaIdAndAtivoTrue(Long empresaId);
-    
+
     boolean existsByCnpjAndEmpresaId(String cnpj, Long empresaId);
-    
-    // CORREÇÃO DO ERRO: Este método estava faltando
+
     Optional<Fornecedor> findByIdAndEmpresaId(Long id, Long empresaId);
 }

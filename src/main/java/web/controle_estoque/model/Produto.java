@@ -32,7 +32,7 @@ public class Produto {
 
     @NotNull
     @ManyToOne
-    @JoinColumn(name = "fornecedor_id") 
+    @JoinColumn(name = "fornecedor_id")
     private Fornecedor fornecedor;
 
     @Column(nullable = false)
@@ -41,5 +41,5 @@ public class Produto {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "empresa_id", nullable = false)
-    private Empresa empresa; 
+    private Empresa empresa;
 }

@@ -19,9 +19,8 @@ public class ItemEstoqueService {
     private final ItemEstoqueRepository itemEstoqueRepository;
     private final EmpresaRepository empresaRepository;
     private final ProdutoRepository produtoRepository;
-    
-    // CORREÇÃO DO ERRO: Faltava declarar esta variável
-    private final SecurityService securityService; 
+
+    private final SecurityService securityService;
 
     public Page<ItemEstoque> listar(Pageable pageable, String termo) {
         Empresa empresa = securityService.getEmpresaLogada(); // Agora funciona
@@ -38,7 +37,6 @@ public class ItemEstoqueService {
                 .orElseThrow(() -> new IllegalArgumentException("Item não encontrado"));
     }
 
-    // Métodos para o Dashboard (HomeController)
     public long contarCriticos() {
         Empresa empresa = securityService.getEmpresaLogada();
         return itemEstoqueRepository.countItensCriticos(empresa.getId());
@@ -48,44 +46,38 @@ public class ItemEstoqueService {
         Empresa empresa = securityService.getEmpresaLogada();
         return itemEstoqueRepository.valorTotalEstoque(empresa.getId());
     }
-    
-    // ... Mantenha os métodos criarNovoItem, realizarEntrada, realizarSaida, salvarConfiguracao iguais ao passo anterior
-    // Apenas certifique-se de usar securityService.getEmpresaLogada() dentro deles.
-    
+
     @Transactional
     public void criarNovoItem(Long produtoId, Integer qtdInicial, Integer qtdMinima) {
-         Empresa empresa = securityService.getEmpresaLogada();
-         // ... resto da lógica
-         // Lembrar de setar item.setEmpresa(empresa);
-         
-         // Código simplificado para caber na resposta:
-         if (itemEstoqueRepository.findByEmpresaIdAndProdutoId(empresa.getId(), produtoId).isPresent()) {
+        Empresa empresa = securityService.getEmpresaLogada();
+        if (itemEstoqueRepository.findByEmpresaIdAndProdutoId(empresa.getId(), produtoId).isPresent()) {
             throw new IllegalArgumentException("Já existe.");
-         }
-         Produto produto = produtoRepository.findById(produtoId).orElseThrow();
-         ItemEstoque novo = new ItemEstoque();
-         novo.setEmpresa(empresa);
-         novo.setProduto(produto);
-         novo.setQuantidadeAtual(qtdInicial);
-         novo.setQuantidadeMinima(qtdMinima);
-         itemEstoqueRepository.save(novo);
+        }
+        Produto produto = produtoRepository.findById(produtoId).orElseThrow();
+        ItemEstoque novo = new ItemEstoque();
+        novo.setEmpresa(empresa);
+        novo.setProduto(produto);
+        novo.setQuantidadeAtual(qtdInicial);
+        novo.setQuantidadeMinima(qtdMinima);
+        itemEstoqueRepository.save(novo);
     }
-    
+
     @Transactional
     public void realizarEntrada(Long id, Integer qtd) {
-        ItemEstoque item = buscarPorId(id); // Já valida empresa
+        ItemEstoque item = buscarPorId(id);
         item.setQuantidadeAtual(item.getQuantidadeAtual() + qtd);
         itemEstoqueRepository.save(item);
     }
 
     @Transactional
     public void realizarSaida(Long id, Integer qtd) {
-        ItemEstoque item = buscarPorId(id); // Já valida empresa
-        if(item.getQuantidadeAtual() < qtd) throw new IllegalArgumentException("Saldo insuficiente");
+        ItemEstoque item = buscarPorId(id);
+        if (item.getQuantidadeAtual() < qtd)
+            throw new IllegalArgumentException("Saldo insuficiente");
         item.setQuantidadeAtual(item.getQuantidadeAtual() - qtd);
         itemEstoqueRepository.save(item);
     }
-    
+
     @Transactional
     public void salvarConfiguracao(Long id, Integer min) {
         ItemEstoque item = buscarPorId(id);

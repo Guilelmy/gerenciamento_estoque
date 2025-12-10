@@ -8,11 +8,10 @@ import java.util.Optional;
 
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
-    
-    // Necessário para o Spring Security fazer o login
+
     Optional<Empresa> findByEmail(String email);
-    
-    // Para validar cadastro duplicado
+
     boolean existsByCnpj(String cnpj);
+
     boolean existsByEmail(String email);
 }

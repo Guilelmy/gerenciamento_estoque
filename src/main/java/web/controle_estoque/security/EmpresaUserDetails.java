@@ -31,20 +31,31 @@ public class EmpresaUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return empresa.getSenha(); // A senha deve estar criptografada no banco (BCrypt)
+        return empresa.getSenha();
     }
 
     @Override
     public String getUsername() {
-        return empresa.getEmail(); // Usaremos o email para login
+        return empresa.getEmail();
     }
 
     @Override
-    public boolean isAccountNonExpired() { return true; }
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
     @Override
-    public boolean isAccountNonLocked() { return true; }
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
     @Override
-    public boolean isCredentialsNonExpired() { return true; }
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
     @Override
-    public boolean isEnabled() { return true; }
+    public boolean isEnabled() {
+        return true;
+    }
 }

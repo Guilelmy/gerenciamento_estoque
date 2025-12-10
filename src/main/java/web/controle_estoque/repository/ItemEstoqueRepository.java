@@ -11,20 +11,20 @@ import java.util.Optional;
 
 @Repository
 public interface ItemEstoqueRepository extends JpaRepository<ItemEstoque, Long> {
-    
+
     Page<ItemEstoque> findByEmpresaId(Long empresaId, Pageable pageable);
 
     @Query("SELECT i FROM ItemEstoque i WHERE i.empresa.id = :empresaId AND lower(i.produto.nome) LIKE lower(concat('%', :termo, '%'))")
-    Page<ItemEstoque> buscarPorNomeProduto(@Param("empresaId") Long empresaId, @Param("termo") String termo, Pageable pageable);
+    Page<ItemEstoque> buscarPorNomeProduto(@Param("empresaId") Long empresaId, @Param("termo") String termo,
+            Pageable pageable);
 
     Optional<ItemEstoque> findByEmpresaIdAndProdutoId(Long empresaId, Long produtoId);
+
     Optional<ItemEstoque> findByIdAndEmpresaId(Long id, Long empresaId);
-    
-    // CORREÇÃO DO ERRO: Adicionamos o parâmetro :empresaId na query e no método
+
     @Query("SELECT COUNT(i) FROM ItemEstoque i WHERE i.empresa.id = :empresaId AND i.quantidadeAtual <= i.quantidadeMinima")
     long countItensCriticos(@Param("empresaId") Long empresaId);
-    
-    // CORREÇÃO DO ERRO: Adicionamos o parâmetro :empresaId
+
     @Query("SELECT SUM(i.quantidadeAtual * i.produto.preco) FROM ItemEstoque i WHERE i.empresa.id = :empresaId")
     Double valorTotalEstoque(@Param("empresaId") Long empresaId);
 }

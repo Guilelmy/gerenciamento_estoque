@@ -6461,3 +6461,748 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2025-12-10T15:49:25.421-03:00  INFO 121226 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-12-10T15:49:25.421-03:00  INFO 121226 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
 2025-12-10T15:49:25.423-03:00  INFO 121226 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2025-12-10T16:11:58.958-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 5 class path changes (0 additions, 0 deletions, 5 modifications)
+2025-12-10T16:11:58.960-03:00  INFO 121226 --- [controle_estoque] [Thread-5] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:11:58.962-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:11:58.972-03:00  INFO 121226 --- [controle_estoque] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:11:58.974-03:00  INFO 121226 --- [controle_estoque] [Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2025-12-10T16:11:58.975-03:00  INFO 121226 --- [controle_estoque] [Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2025-12-10T16:11:59.142-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:11:59.142-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:11:59.452-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:11:59.462-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:11:59.557-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:11:59.558-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:11:59.558-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:11:59.572-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:11:59.572-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 428 ms
+2025-12-10T16:11:59.622-03:00  WARN 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E3A7E6792DD799909A2308D4BA21B5A5]
+2025-12-10T16:11:59.623-03:00 ERROR 121226 --- [controle_estoque] [restartedMain] o.a.c.s.StandardManager                  : Exception loading sessions from persistent storage
+
+java.io.StreamCorruptedException: invalid type code: 00
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1684) ~[?:?]
+	at java.base/java.io.ObjectInputStream$FieldValues.<init>(ObjectInputStream.java:2513) ~[?:?]
+	at java.base/java.io.ObjectInputStream.defaultReadObject(ObjectInputStream.java:627) ~[?:?]
+	at java.base/java.lang.Throwable.readObject(Throwable.java:941) ~[?:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at java.base/java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:976) ~[?:?]
+	at java.base/java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:2335) ~[?:?]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2166) ~[?:?]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1653) ~[?:?]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:495) ~[?:?]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:453) ~[?:?]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1121) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:821) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:208) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:154) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:343) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4479) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148) ~[?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:770) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328) ~[?:?]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148) ~[?:?]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:868) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:436) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at web.controle_estoque.ControleVacinacaoApplication.main(ControleVacinacaoApplication.java:10) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.7.jar:3.5.7]
+
+2025-12-10T16:11:59.678-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Starting...
+2025-12-10T16:11:59.689-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@61d13df1
+2025-12-10T16:11:59.689-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Start completed.
+2025-12-10T16:11:59.692-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:11:59.708-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.007s)
+2025-12-10T16:11:59.724-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:11:59.724-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:11:59.744-03:00  INFO 149688 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 149688 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:11:59.751-03:00  INFO 149688 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:11:59.763-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:11:59.920-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:11:59.972-03:00  INFO 149688 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10T16:11:59.972-03:00  INFO 149688 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10T16:12:00.089-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:12:00.156-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:12:00.161-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:12:00.254-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:12:00.270-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:12:00.287-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 1.235 seconds (process running for 1361.587)
+2025-12-10T16:12:00.290-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:12:00.750-03:00  INFO 149688 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:12:00.799-03:00  INFO 149688 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:12:01.261-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:12:01.274-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:12:01.274-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:12:01.303-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:12:01.303-03:00  INFO 149688 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1330 ms
+2025-12-10T16:12:01.654-03:00  INFO 149688 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2025-12-10T16:12:01.760-03:00  INFO 149688 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32976ee9
+2025-12-10T16:12:01.761-03:00  INFO 149688 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2025-12-10T16:12:01.791-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:12:01.843-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.029s)
+2025-12-10T16:12:01.885-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:12:01.888-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:12:02.309-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:12:03.132-03:00  INFO 149688 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:12:03.564-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.s.d.j.r.q.QueryEnhancerFactory         : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-10T16:12:04.175-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:12:04.441-03:00  INFO 149688 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:12:04.462-03:00  INFO 149688 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:12:04.768-03:00  WARN 149688 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10T16:12:04.841-03:00  WARN 149688 --- [controle_estoque] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-10T16:12:04.847-03:00  INFO 149688 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:12:04.852-03:00  INFO 149688 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2025-12-10T16:12:04.854-03:00  INFO 149688 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2025-12-10T16:12:04.865-03:00  INFO 149688 --- [controle_estoque] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-10T16:12:04.883-03:00 ERROR 149688 --- [controle_estoque] [restartedMain] o.s.b.SpringApplication                  : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:408) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:394) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:586) ~[spring-context-6.2.12.jar:6.2.12]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:364) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:310) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:1009) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:630) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at web.controle_estoque.ControleVacinacaoApplication.main(ControleVacinacaoApplication.java:10) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.7.jar:3.5.7]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:251) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:220) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1104) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:217) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: java.net.BindException: Endereço já em uso
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.bind(Net.java:511) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:335) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:297) ~[?:?]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:264) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1398) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1481) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:644) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1101) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:217) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+
+2025-12-10T16:14:30.804-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:30.805-03:00  INFO 121226 --- [controle_estoque] [Thread-7] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:30.806-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:30.811-03:00  INFO 121226 --- [controle_estoque] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:30.811-03:00  INFO 121226 --- [controle_estoque] [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown initiated...
+2025-12-10T16:14:30.813-03:00  INFO 121226 --- [controle_estoque] [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown completed.
+2025-12-10T16:14:30.930-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:30.930-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:31.091-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:31.097-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:31.156-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:31.157-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:31.157-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:31.164-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:31.164-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 233 ms
+2025-12-10T16:14:31.244-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Starting...
+2025-12-10T16:14:31.256-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@71fdc9cb
+2025-12-10T16:14:31.256-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Start completed.
+2025-12-10T16:14:31.262-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:31.281-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.007s)
+2025-12-10T16:14:31.312-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:31.313-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:31.343-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:31.525-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:31.705-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:31.808-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:31.819-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:31.932-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:31.949-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:31.957-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 1.06 seconds (process running for 1513.257)
+2025-12-10T16:14:31.958-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:33.337-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:33.339-03:00  INFO 121226 --- [controle_estoque] [Thread-11] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:33.343-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:33.359-03:00  INFO 121226 --- [controle_estoque] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:33.361-03:00  INFO 121226 --- [controle_estoque] [Thread-11] c.z.h.HikariDataSource                   : HikariPool-3 - Shutdown initiated...
+2025-12-10T16:14:33.363-03:00  INFO 121226 --- [controle_estoque] [Thread-11] c.z.h.HikariDataSource                   : HikariPool-3 - Shutdown completed.
+2025-12-10T16:14:33.529-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:33.531-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:33.764-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:33.781-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:33.912-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:33.913-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:33.913-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:33.924-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:33.924-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 390 ms
+2025-12-10T16:14:33.967-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-4 - Starting...
+2025-12-10T16:14:33.984-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@58e3e25c
+2025-12-10T16:14:33.985-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-4 - Start completed.
+2025-12-10T16:14:33.987-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:34.006-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.007s)
+2025-12-10T16:14:34.030-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:34.031-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:34.052-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:34.120-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:34.247-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:34.338-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:34.344-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:34.401-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:34.414-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:34.425-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.962 seconds (process running for 1515.725)
+2025-12-10T16:14:34.426-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:35.806-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:35.808-03:00  INFO 121226 --- [controle_estoque] [Thread-15] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:35.810-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:35.819-03:00  INFO 121226 --- [controle_estoque] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:35.820-03:00  INFO 121226 --- [controle_estoque] [Thread-15] c.z.h.HikariDataSource                   : HikariPool-4 - Shutdown initiated...
+2025-12-10T16:14:35.823-03:00  INFO 121226 --- [controle_estoque] [Thread-15] c.z.h.HikariDataSource                   : HikariPool-4 - Shutdown completed.
+2025-12-10T16:14:35.979-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:35.980-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:36.205-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:36.213-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:36.276-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:36.277-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:36.278-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:36.285-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:36.285-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 302 ms
+2025-12-10T16:14:36.331-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-5 - Starting...
+2025-12-10T16:14:36.351-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@497133ec
+2025-12-10T16:14:36.351-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-5 - Start completed.
+2025-12-10T16:14:36.352-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:36.361-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.003s)
+2025-12-10T16:14:36.392-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:36.394-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:36.424-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:36.497-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:36.618-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:36.725-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:36.731-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:36.781-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:36.810-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:36.814-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.894 seconds (process running for 1518.114)
+2025-12-10T16:14:36.816-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:38.185-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:38.188-03:00  INFO 121226 --- [controle_estoque] [Thread-19] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:38.190-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:38.199-03:00  INFO 121226 --- [controle_estoque] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:38.200-03:00  INFO 121226 --- [controle_estoque] [Thread-19] c.z.h.HikariDataSource                   : HikariPool-5 - Shutdown initiated...
+2025-12-10T16:14:38.205-03:00  INFO 121226 --- [controle_estoque] [Thread-19] c.z.h.HikariDataSource                   : HikariPool-5 - Shutdown completed.
+2025-12-10T16:14:38.383-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:38.385-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:38.577-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:38.585-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:38.670-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:38.671-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:38.671-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:38.681-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:38.681-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 290 ms
+2025-12-10T16:14:38.745-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-6 - Starting...
+2025-12-10T16:14:38.756-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@4e25ddca
+2025-12-10T16:14:38.757-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-6 - Start completed.
+2025-12-10T16:14:38.758-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:38.782-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.015s)
+2025-12-10T16:14:38.797-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:38.797-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:38.820-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:38.952-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:39.130-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:39.198-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:39.204-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:39.279-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:39.308-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:39.325-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 1.019 seconds (process running for 1520.625)
+2025-12-10T16:14:39.331-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:41.084-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-12-10T16:14:41.086-03:00  INFO 121226 --- [controle_estoque] [Thread-23] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:41.089-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:41.092-03:00  INFO 121226 --- [controle_estoque] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:41.092-03:00  INFO 121226 --- [controle_estoque] [Thread-23] c.z.h.HikariDataSource                   : HikariPool-6 - Shutdown initiated...
+2025-12-10T16:14:41.094-03:00  INFO 121226 --- [controle_estoque] [Thread-23] c.z.h.HikariDataSource                   : HikariPool-6 - Shutdown completed.
+2025-12-10T16:14:41.244-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:41.246-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:41.502-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:41.512-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:41.607-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:41.618-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:41.619-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:41.628-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:41.628-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 377 ms
+2025-12-10T16:14:41.673-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-7 - Starting...
+2025-12-10T16:14:41.695-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@446d57c0
+2025-12-10T16:14:41.695-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-7 - Start completed.
+2025-12-10T16:14:41.696-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:41.717-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.009s)
+2025-12-10T16:14:41.751-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:41.752-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:41.786-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:41.909-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:42.102-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:42.217-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:42.225-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:42.322-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:42.332-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:42.336-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 1.151 seconds (process running for 1523.636)
+2025-12-10T16:14:42.337-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:43.725-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:43.727-03:00  INFO 121226 --- [controle_estoque] [Thread-27] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:43.729-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:43.735-03:00  INFO 121226 --- [controle_estoque] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:43.736-03:00  INFO 121226 --- [controle_estoque] [Thread-27] c.z.h.HikariDataSource                   : HikariPool-7 - Shutdown initiated...
+2025-12-10T16:14:43.740-03:00  INFO 121226 --- [controle_estoque] [Thread-27] c.z.h.HikariDataSource                   : HikariPool-7 - Shutdown completed.
+2025-12-10T16:14:43.888-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:43.888-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:44.077-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:44.085-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:44.164-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:44.166-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:44.166-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:44.174-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:44.174-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 285 ms
+2025-12-10T16:14:44.210-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-8 - Starting...
+2025-12-10T16:14:44.227-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@37624e25
+2025-12-10T16:14:44.227-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-8 - Start completed.
+2025-12-10T16:14:44.228-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:44.241-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:14:44.261-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:44.262-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:44.278-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:44.335-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:44.427-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:44.514-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:44.531-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:44.580-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:44.590-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:44.594-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.743 seconds (process running for 1525.894)
+2025-12-10T16:14:44.595-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:46.389-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-12-10T16:14:46.392-03:00  INFO 121226 --- [controle_estoque] [Thread-31] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:46.393-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:46.396-03:00  INFO 121226 --- [controle_estoque] [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:46.397-03:00  INFO 121226 --- [controle_estoque] [Thread-31] c.z.h.HikariDataSource                   : HikariPool-8 - Shutdown initiated...
+2025-12-10T16:14:46.399-03:00  INFO 121226 --- [controle_estoque] [Thread-31] c.z.h.HikariDataSource                   : HikariPool-8 - Shutdown completed.
+2025-12-10T16:14:46.505-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:46.506-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:46.639-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:46.646-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:46.706-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:46.707-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:46.707-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:46.714-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:46.714-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 205 ms
+2025-12-10T16:14:46.747-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-9 - Starting...
+2025-12-10T16:14:46.758-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@2206b341
+2025-12-10T16:14:46.758-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-9 - Start completed.
+2025-12-10T16:14:46.759-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:46.766-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.003s)
+2025-12-10T16:14:46.782-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:46.783-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:46.805-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:46.849-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:46.924-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:46.977-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:46.984-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:47.059-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:47.068-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:47.072-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.595 seconds (process running for 1528.373)
+2025-12-10T16:14:47.077-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:48.468-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:48.470-03:00  INFO 121226 --- [controle_estoque] [Thread-35] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:48.476-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:48.484-03:00  INFO 121226 --- [controle_estoque] [Thread-35] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:48.485-03:00  INFO 121226 --- [controle_estoque] [Thread-35] c.z.h.HikariDataSource                   : HikariPool-9 - Shutdown initiated...
+2025-12-10T16:14:48.486-03:00  INFO 121226 --- [controle_estoque] [Thread-35] c.z.h.HikariDataSource                   : HikariPool-9 - Shutdown completed.
+2025-12-10T16:14:48.656-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:48.656-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:48.858-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:48.865-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:48.929-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:48.931-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:48.931-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:48.942-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:48.942-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 284 ms
+2025-12-10T16:14:49.014-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-10 - Starting...
+2025-12-10T16:14:49.033-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@6604e899
+2025-12-10T16:14:49.034-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-10 - Start completed.
+2025-12-10T16:14:49.036-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:49.057-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.006s)
+2025-12-10T16:14:49.080-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:49.081-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:49.102-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:49.180-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:49.271-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:49.326-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:49.341-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:49.410-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:49.428-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:49.434-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.829 seconds (process running for 1530.734)
+2025-12-10T16:14:49.437-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:51.813-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:51.816-03:00  INFO 121226 --- [controle_estoque] [Thread-39] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:51.818-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:51.825-03:00  INFO 121226 --- [controle_estoque] [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:51.825-03:00  INFO 121226 --- [controle_estoque] [Thread-39] c.z.h.HikariDataSource                   : HikariPool-10 - Shutdown initiated...
+2025-12-10T16:14:51.827-03:00  INFO 121226 --- [controle_estoque] [Thread-39] c.z.h.HikariDataSource                   : HikariPool-10 - Shutdown completed.
+2025-12-10T16:14:51.964-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:51.965-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:52.101-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:52.108-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:52.162-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:52.163-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:52.163-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:52.171-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:52.171-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 205 ms
+2025-12-10T16:14:52.213-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-11 - Starting...
+2025-12-10T16:14:52.227-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@413fd15f
+2025-12-10T16:14:52.227-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-11 - Start completed.
+2025-12-10T16:14:52.228-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:52.238-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.003s)
+2025-12-10T16:14:52.256-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:52.257-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:52.271-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:52.315-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:52.395-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:52.446-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:52.453-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:52.495-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:52.504-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:52.508-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.576 seconds (process running for 1533.808)
+2025-12-10T16:14:52.509-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:54.898-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:54.900-03:00  INFO 121226 --- [controle_estoque] [Thread-43] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:54.902-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:54.908-03:00  INFO 121226 --- [controle_estoque] [Thread-43] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:54.909-03:00  INFO 121226 --- [controle_estoque] [Thread-43] c.z.h.HikariDataSource                   : HikariPool-11 - Shutdown initiated...
+2025-12-10T16:14:54.912-03:00  INFO 121226 --- [controle_estoque] [Thread-43] c.z.h.HikariDataSource                   : HikariPool-11 - Shutdown completed.
+2025-12-10T16:14:55.067-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:55.068-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:55.284-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:55.291-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:55.339-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:55.340-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:55.340-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:55.352-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:55.352-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 282 ms
+2025-12-10T16:14:55.401-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-12 - Starting...
+2025-12-10T16:14:55.417-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@4f504f35
+2025-12-10T16:14:55.418-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-12 - Start completed.
+2025-12-10T16:14:55.421-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:55.443-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.009s)
+2025-12-10T16:14:55.459-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:55.459-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:55.471-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:55.517-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:55.604-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:55.637-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:55.642-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:55.686-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:55.695-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:55.698-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.664 seconds (process running for 1536.999)
+2025-12-10T16:14:55.700-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:14:57.089-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:14:57.090-03:00  INFO 121226 --- [controle_estoque] [Thread-47] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:14:57.092-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:14:57.095-03:00  INFO 121226 --- [controle_estoque] [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:57.096-03:00  INFO 121226 --- [controle_estoque] [Thread-47] c.z.h.HikariDataSource                   : HikariPool-12 - Shutdown initiated...
+2025-12-10T16:14:57.099-03:00  INFO 121226 --- [controle_estoque] [Thread-47] c.z.h.HikariDataSource                   : HikariPool-12 - Shutdown completed.
+2025-12-10T16:14:57.236-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:14:57.237-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:14:57.379-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:14:57.387-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:14:57.444-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:14:57.445-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:14:57.445-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:14:57.452-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:14:57.452-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 213 ms
+2025-12-10T16:14:57.482-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-13 - Starting...
+2025-12-10T16:14:57.498-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-13 - Added connection org.postgresql.jdbc.PgConnection@466418ac
+2025-12-10T16:14:57.498-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-13 - Start completed.
+2025-12-10T16:14:57.499-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:14:57.504-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:14:57.531-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:14:57.532-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:14:57.550-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:14:57.605-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:14:57.683-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:14:57.721-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:14:57.727-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:14:57.767-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:14:57.776-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:14:57.779-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.571 seconds (process running for 1539.08)
+2025-12-10T16:14:57.780-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:16:04.228-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:16:04.229-03:00  INFO 121226 --- [controle_estoque] [Thread-51] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:16:04.230-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:16:04.231-03:00  INFO 121226 --- [controle_estoque] [Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:04.232-03:00  INFO 121226 --- [controle_estoque] [Thread-51] c.z.h.HikariDataSource                   : HikariPool-13 - Shutdown initiated...
+2025-12-10T16:16:04.232-03:00  INFO 121226 --- [controle_estoque] [Thread-51] c.z.h.HikariDataSource                   : HikariPool-13 - Shutdown completed.
+2025-12-10T16:16:04.332-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:16:04.332-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:16:04.415-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:16:04.419-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:16:04.443-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:16:04.443-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:16:04.443-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:16:04.447-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:16:04.447-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 114 ms
+2025-12-10T16:16:04.465-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-14 - Starting...
+2025-12-10T16:16:04.471-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-14 - Added connection org.postgresql.jdbc.PgConnection@5838623e
+2025-12-10T16:16:04.471-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-14 - Start completed.
+2025-12-10T16:16:04.472-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:16:04.477-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:16:04.487-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:16:04.487-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:16:04.495-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:16:04.525-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:04.566-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:16:04.584-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:16:04.587-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:16:04.618-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:16:04.625-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:16:04.627-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.315 seconds (process running for 1605.927)
+2025-12-10T16:16:04.628-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:16:15.029-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:16:15.030-03:00  INFO 121226 --- [controle_estoque] [Thread-55] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:16:15.032-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:16:15.034-03:00  INFO 121226 --- [controle_estoque] [Thread-55] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:15.034-03:00  INFO 121226 --- [controle_estoque] [Thread-55] c.z.h.HikariDataSource                   : HikariPool-14 - Shutdown initiated...
+2025-12-10T16:16:15.035-03:00  INFO 121226 --- [controle_estoque] [Thread-55] c.z.h.HikariDataSource                   : HikariPool-14 - Shutdown completed.
+2025-12-10T16:16:15.146-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:16:15.146-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:16:15.299-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:16:15.308-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:16:15.354-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:16:15.356-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:16:15.356-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:16:15.362-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:16:15.362-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 215 ms
+2025-12-10T16:16:15.398-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-15 - Starting...
+2025-12-10T16:16:15.409-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-15 - Added connection org.postgresql.jdbc.PgConnection@69021bef
+2025-12-10T16:16:15.409-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-15 - Start completed.
+2025-12-10T16:16:15.410-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:16:15.415-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:16:15.429-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:16:15.429-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:16:15.448-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:16:15.556-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:15.671-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:16:15.769-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:16:15.785-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:16:15.909-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:16:15.926-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:16:15.932-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.817 seconds (process running for 1617.232)
+2025-12-10T16:16:15.934-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:16:17.312-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:16:17.314-03:00  INFO 121226 --- [controle_estoque] [Thread-59] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:16:17.315-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:16:17.316-03:00  INFO 121226 --- [controle_estoque] [Thread-59] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:17.316-03:00  INFO 121226 --- [controle_estoque] [Thread-59] c.z.h.HikariDataSource                   : HikariPool-15 - Shutdown initiated...
+2025-12-10T16:16:17.317-03:00  INFO 121226 --- [controle_estoque] [Thread-59] c.z.h.HikariDataSource                   : HikariPool-15 - Shutdown completed.
+2025-12-10T16:16:17.426-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:16:17.427-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:16:17.557-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:16:17.564-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:16:17.610-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:16:17.610-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:16:17.610-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:16:17.616-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:16:17.616-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 189 ms
+2025-12-10T16:16:17.642-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-16 - Starting...
+2025-12-10T16:16:17.649-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-16 - Added connection org.postgresql.jdbc.PgConnection@5b9b608f
+2025-12-10T16:16:17.650-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-16 - Start completed.
+2025-12-10T16:16:17.651-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:16:17.658-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.003s)
+2025-12-10T16:16:17.670-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:16:17.671-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:16:17.686-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:16:17.729-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:17.795-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:16:17.836-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:16:17.844-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:16:17.890-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:16:17.902-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:16:17.906-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.502 seconds (process running for 1619.207)
+2025-12-10T16:16:17.908-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:16:19.293-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:16:19.295-03:00  INFO 121226 --- [controle_estoque] [Thread-63] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:16:19.296-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:16:19.299-03:00  INFO 121226 --- [controle_estoque] [Thread-63] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:19.300-03:00  INFO 121226 --- [controle_estoque] [Thread-63] c.z.h.HikariDataSource                   : HikariPool-16 - Shutdown initiated...
+2025-12-10T16:16:19.301-03:00  INFO 121226 --- [controle_estoque] [Thread-63] c.z.h.HikariDataSource                   : HikariPool-16 - Shutdown completed.
+2025-12-10T16:16:19.407-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:16:19.408-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:16:19.478-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:16:19.481-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:16:19.507-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:16:19.507-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:16:19.508-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:16:19.511-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:16:19.511-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 103 ms
+2025-12-10T16:16:19.529-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-17 - Starting...
+2025-12-10T16:16:19.534-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-17 - Added connection org.postgresql.jdbc.PgConnection@3ea06b43
+2025-12-10T16:16:19.534-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-17 - Start completed.
+2025-12-10T16:16:19.535-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:16:19.539-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.001s)
+2025-12-10T16:16:19.545-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:16:19.546-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:16:19.555-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:16:19.580-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:19.626-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:16:19.649-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:16:19.653-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:16:19.679-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:16:19.686-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:16:19.689-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.297 seconds (process running for 1620.989)
+2025-12-10T16:16:19.689-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:16:51.104-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:16:51.105-03:00  INFO 121226 --- [controle_estoque] [Thread-67] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:16:51.106-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:16:51.107-03:00  INFO 121226 --- [controle_estoque] [Thread-67] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:51.107-03:00  INFO 121226 --- [controle_estoque] [Thread-67] c.z.h.HikariDataSource                   : HikariPool-17 - Shutdown initiated...
+2025-12-10T16:16:51.108-03:00  INFO 121226 --- [controle_estoque] [Thread-67] c.z.h.HikariDataSource                   : HikariPool-17 - Shutdown completed.
+2025-12-10T16:16:51.178-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:16:51.178-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:16:51.259-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:16:51.263-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:16:51.287-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:16:51.287-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:16:51.287-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:16:51.291-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:16:51.291-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 112 ms
+2025-12-10T16:16:51.311-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-18 - Starting...
+2025-12-10T16:16:51.317-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-18 - Added connection org.postgresql.jdbc.PgConnection@5d5ace1a
+2025-12-10T16:16:51.317-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-18 - Start completed.
+2025-12-10T16:16:51.319-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:16:51.326-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:16:51.335-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:16:51.336-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:16:51.347-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:16:51.379-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:16:51.430-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:16:51.459-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:16:51.463-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:16:51.490-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:16:51.496-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:16:51.498-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.339 seconds (process running for 1652.798)
+2025-12-10T16:16:51.499-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:18:37.386-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:18:37.388-03:00  INFO 121226 --- [controle_estoque] [Thread-71] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:18:37.390-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:18:37.393-03:00  INFO 121226 --- [controle_estoque] [Thread-71] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:18:37.393-03:00  INFO 121226 --- [controle_estoque] [Thread-71] c.z.h.HikariDataSource                   : HikariPool-18 - Shutdown initiated...
+2025-12-10T16:18:37.394-03:00  INFO 121226 --- [controle_estoque] [Thread-71] c.z.h.HikariDataSource                   : HikariPool-18 - Shutdown completed.
+2025-12-10T16:18:37.491-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:18:37.492-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:18:37.581-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:18:37.584-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:18:37.621-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:18:37.622-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:18:37.622-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:18:37.626-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:18:37.626-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 133 ms
+2025-12-10T16:18:37.647-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-19 - Starting...
+2025-12-10T16:18:37.656-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-19 - Added connection org.postgresql.jdbc.PgConnection@7a2110c7
+2025-12-10T16:18:37.656-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-19 - Start completed.
+2025-12-10T16:18:37.657-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:18:37.662-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:18:37.674-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:18:37.675-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:18:37.683-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:18:37.714-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:18:37.755-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:18:37.773-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:18:37.776-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:18:37.797-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:18:37.802-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:18:37.804-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.33 seconds (process running for 1759.104)
+2025-12-10T16:18:37.805-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T16:18:39.200-03:00  INFO 121226 --- [controle_estoque] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-12-10T16:18:39.202-03:00  INFO 121226 --- [controle_estoque] [Thread-75] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T16:18:39.203-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T16:18:39.207-03:00  INFO 121226 --- [controle_estoque] [Thread-75] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:18:39.207-03:00  INFO 121226 --- [controle_estoque] [Thread-75] c.z.h.HikariDataSource                   : HikariPool-19 - Shutdown initiated...
+2025-12-10T16:18:39.208-03:00  INFO 121226 --- [controle_estoque] [Thread-75] c.z.h.HikariDataSource                   : HikariPool-19 - Shutdown completed.
+2025-12-10T16:18:39.298-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 121226 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T16:18:39.298-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T16:18:39.373-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T16:18:39.380-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2025-12-10T16:18:39.408-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T16:18:39.409-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T16:18:39.409-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T16:18:39.412-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T16:18:39.412-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 113 ms
+2025-12-10T16:18:39.434-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-20 - Starting...
+2025-12-10T16:18:39.439-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-20 - Added connection org.postgresql.jdbc.PgConnection@2f3734c7
+2025-12-10T16:18:39.439-03:00  INFO 121226 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-20 - Start completed.
+2025-12-10T16:18:39.440-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T16:18:39.446-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.002s)
+2025-12-10T16:18:39.460-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T16:18:39.461-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T16:18:39.476-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T16:18:39.510-03:00  INFO 121226 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T16:18:39.568-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T16:18:39.604-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T16:18:39.609-03:00  INFO 121226 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T16:18:39.642-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T16:18:39.651-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T16:18:39.657-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.381 seconds (process running for 1760.957)
+2025-12-10T16:18:39.659-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

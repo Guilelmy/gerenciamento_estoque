@@ -54,5 +54,5 @@ public class Fornecedor {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "empresa_id", nullable = false)
-    private Empresa empresa; // <--- ADICIONE ISSO
+    private Empresa empresa;
 }
