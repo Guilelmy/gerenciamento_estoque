@@ -1,124 +1,287 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
-<head>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout}"
+>
+  <head>
     <title>Gerenciar Produtos</title>
-</head>
-<body>
-
-<div id="main-content" layout:fragment="conteudo">
-    
-    <div class="mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
+  </head>
+  <body>
+    <div id="main-content" layout:fragment="conteudo">
+      <div
+        class="mb-6 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Produtos</h1>
-            <p class="text-gray-500 text-sm">Catálogo de itens ativos</p>
+          <h1 class="text-2xl font-bold text-gray-800">Produtos</h1>
+          <p class="text-gray-500 text-sm">Catálogo de itens ativos</p>
         </div>
-        
-        <a href="/produtos/novo" 
-           hx-target="#main-content" 
-           hx-select="#main-content" 
-           hx-swap="outerHTML"
-           class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition shadow flex items-center gap-2">
-            <span>+</span> Novo Produto
+
+        <a
+          href="/produtos/novo"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition shadow flex items-center gap-2 font-bold cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+          Novo Produto
         </a>
-    </div>
+      </div>
 
-    <div class="mb-6 relative">
-        <input type="text" name="termo" th:value="${termoAtual}"
-               placeholder="Buscar produto por nome..." 
-               class="w-full pl-10 pr-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-               hx-get="/produtos/busca" 
-               hx-trigger="keyup changed delay:500ms" 
-               hx-target="#tabela-container" 
-               hx-indicator="#loading">
-        <div class="absolute left-3 top-2.5 text-gray-400">🔍</div>
-        <div id="loading" class="htmx-indicator absolute right-3 top-2.5 text-sm text-blue-500 font-semibold">Buscando...</div>
-    </div>
-
-    <div id="tabela-container" class="bg-white rounded-lg shadow overflow-hidden flex flex-col">
-        
-        <div th:fragment="tabela-produtos">
-            <table class="min-w-full leading-normal">
-                <thead>
-                    <tr>
-                        <th class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Nome</th>
-                        <th class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Preço</th>
-                        <th class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Fornecedor</th>
-                        <th class="px-5 py-3 border-b-2 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider w-32">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="p : ${produtos.content}" class="hover:bg-gray-50 transition">
-                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                            <p class="text-gray-900 font-bold" th:text="${p.nome}"></p>
-                            <p class="text-gray-400 text-xs truncate w-48" th:text="${p.descricao}"></p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 text-sm font-mono text-green-700 font-bold">
-                            R$ <span th:text="${#numbers.formatDecimal(p.preco, 1, 'POINT', 2, 'COMMA')}">0,00</span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 text-sm">
-                            <span class="bg-indigo-100 text-indigo-700 py-1 px-2 rounded-full text-xs font-semibold"
-                                  th:text="${p.fornecedor != null ? p.fornecedor.nome : 'Sem Fornecedor'}">
-                            </span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 text-sm text-center">
-                            <div class="flex justify-center items-center gap-2">
-                                <a th:href="@{/produtos/editar/{id}(id=${p.id})}"
-                                   hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-                                   class="p-2 text-blue-600 hover:bg-blue-100 rounded-full transition" title="Editar">
-                                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                </a>
-                                
-                                <button th:hx-delete="@{/produtos/{id}(id=${p.id}, page=${produtos.number}, termo=${termoAtual})}"
-                                        hx-confirm="Tem certeza que deseja desativar este produto?" 
-                                        hx-target="#tabela-container" 
-                                        hx-swap="innerHTML"
-                                        class="p-2 text-red-600 hover:bg-red-100 rounded-full transition" title="Desativar">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr th:if="${produtos.empty}">
-                        <td colspan="4" class="px-5 py-10 text-center text-gray-500">Nenhum produto ativo encontrado.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div th:if="${!produtos.empty}" class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
-                <span class="text-xs xs:text-sm text-gray-900">
-                    Página <span th:text="${produtos.number + 1}">1</span> de 
-                    <span th:text="${produtos.totalPages}">1</span>
-                    (<span th:text="${produtos.totalElements}">0</span> registros)
-                </span>
-                
-                <div class="inline-flex mt-2 xs:mt-0 gap-2">
-                    <button th:if="${!produtos.first}"
-                            th:hx-get="@{/produtos/busca(page=${produtos.number - 1}, termo=${termoAtual})}"
-                            hx-target="#tabela-container"
-                            class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-l transition">
-                        Anterior
-                    </button>
-                    <button th:if="${produtos.first}" disabled 
-                            class="text-sm bg-gray-100 text-gray-400 font-semibold py-2 px-4 rounded-l cursor-not-allowed">
-                        Anterior
-                    </button>
-                    
-                    <button th:if="${!produtos.last}"
-                            th:hx-get="@{/produtos/busca(page=${produtos.number + 1}, termo=${termoAtual})}"
-                            hx-target="#tabela-container"
-                            class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-r transition">
-                        Próximo
-                    </button>
-                    <button th:if="${produtos.last}" disabled 
-                            class="text-sm bg-gray-100 text-gray-400 font-semibold py-2 px-4 rounded-r cursor-not-allowed">
-                        Próximo
-                    </button>
-                </div>
-            </div>
+      <form
+        class="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4"
+        hx-get="/produtos/busca"
+        hx-trigger="keyup changed delay:500ms from:input"
+        hx-target="#tabela-container"
+        hx-indicator="#loading"
+      >
+        <div class="relative">
+          <input
+            type="text"
+            name="nome"
+            th:value="${nomeAtual}"
+            placeholder="Filtrar por nome do produto..."
+            class="w-full pl-10 pr-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <div class="absolute left-3 top-2.5 text-gray-400">📦</div>
         </div>
+
+        <div class="relative">
+          <input
+            type="text"
+            name="fornecedor"
+            th:value="${fornecedorAtual}"
+            placeholder="Filtrar por fornecedor..."
+            class="w-full pl-10 pr-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <div class="absolute left-3 top-2.5 text-gray-400">🏭</div>
+        </div>
+
+        <div
+          id="loading"
+          class="htmx-indicator fixed top-20 right-6 bg-blue-600 text-white px-3 py-1 rounded shadow text-sm z-50 flex items-center gap-2"
+        >
+          <svg
+            class="animate-spin h-4 w-4 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+          Buscando...
+        </div>
+      </form>
+
+      <div
+        id="tabela-container"
+        class="bg-white rounded-lg shadow overflow-hidden flex flex-col"
+      >
+        <div th:fragment="tabela-produtos">
+          <table class="min-w-full leading-normal">
+            <thead>
+              <tr>
+                <th
+                  class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                >
+                  Nome
+                </th>
+                <th
+                  class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                >
+                  Preço
+                </th>
+                <th
+                  class="px-5 py-3 border-b-2 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                >
+                  Fornecedor
+                </th>
+                <th
+                  class="px-5 py-3 border-b-2 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider w-32"
+                >
+                  Ações
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                th:each="p : ${produtos.content}"
+                class="hover:bg-gray-50 transition"
+              >
+                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                  <p class="text-gray-900 font-bold" th:text="${p.nome}"></p>
+                  <p
+                    class="text-gray-400 text-xs truncate w-48"
+                    th:text="${p.descricao}"
+                  ></p>
+                </td>
+
+                <td
+                  class="px-5 py-5 border-b border-gray-200 text-sm font-mono text-green-700 font-bold"
+                >
+                  R$
+                  <span
+                    th:text="${#numbers.formatDecimal(p.preco, 1, 'POINT', 2, 'COMMA')}"
+                    >0,00</span
+                  >
+                </td>
+
+                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                  <span
+                    class="bg-indigo-100 text-indigo-700 py-1 px-2 rounded-full text-xs font-semibold flex items-center w-fit gap-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-3 w-3"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                    <span
+                      th:text="${p.fornecedor != null ? p.fornecedor.nome : 'Sem Fornecedor'}"
+                    ></span>
+                  </span>
+                </td>
+
+                <td
+                  class="px-5 py-5 border-b border-gray-200 text-sm text-center"
+                >
+                  <div class="flex justify-center items-center gap-2">
+                    <a
+                      th:href="@{/produtos/editar/{id}(id=${p.id})}"
+                      hx-target="#main-content"
+                      hx-select="#main-content"
+                      hx-swap="outerHTML"
+                      class="p-2 text-blue-600 hover:bg-blue-100 rounded-full transition"
+                      title="Editar"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path>
+                      </svg>
+                    </a>
+
+                    <button
+                      th:hx-delete="@{/produtos/{id}(id=${p.id}, page=${produtos.number}, nome=${nomeAtual}, fornecedor=${fornecedorAtual})}"
+                      hx-confirm="Tem certeza que deseja desativar este produto?"
+                      hx-target="#tabela-container"
+                      hx-swap="innerHTML"
+                      class="p-2 text-red-600 hover:bg-red-100 rounded-full transition"
+                      title="Desativar"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr th:if="${produtos.empty}">
+                <td colspan="4" class="px-5 py-10 text-center text-gray-500">
+                  Nenhum produto ativo encontrado.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div
+            th:if="${!produtos.empty}"
+            class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between"
+          >
+            <span class="text-xs xs:text-sm text-gray-900">
+              Página <span th:text="${produtos.number + 1}">1</span> de
+              <span th:text="${produtos.totalPages}">1</span>
+              (<span th:text="${produtos.totalElements}">0</span> registros)
+            </span>
+
+            <div class="inline-flex mt-2 xs:mt-0 gap-2">
+              <button
+                th:if="${!produtos.first}"
+                th:hx-get="@{/produtos/busca(page=${produtos.number - 1}, nome=${nomeAtual}, fornecedor=${fornecedorAtual})}"
+                hx-target="#tabela-container"
+                class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-l transition"
+              >
+                Anterior
+              </button>
+              <button
+                th:if="${produtos.first}"
+                disabled
+                class="text-sm bg-gray-100 text-gray-400 font-semibold py-2 px-4 rounded-l cursor-not-allowed"
+              >
+                Anterior
+              </button>
+
+              <button
+                th:if="${!produtos.last}"
+                th:hx-get="@{/produtos/busca(page=${produtos.number + 1}, nome=${nomeAtual}, fornecedor=${fornecedorAtual})}"
+                hx-target="#tabela-container"
+                class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-r transition"
+              >
+                Próximo
+              </button>
+              <button
+                th:if="${produtos.last}"
+                disabled
+                class="text-sm bg-gray-100 text-gray-400 font-semibold py-2 px-4 rounded-r cursor-not-allowed"
+              >
+                Próximo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>

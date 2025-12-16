@@ -16,15 +16,20 @@ public class ProdutoService {
     private final ProdutoRepository repository;
     private final SecurityService securityService;
 
-    public Page<Produto> listar(Pageable pageable, String termo) {
+    // ... imports
+
+    // Atualize o método listar
+    public Page<Produto> listar(Pageable pageable, String nome, String fornecedor) {
         Empresa empresa = securityService.getEmpresaLogada();
 
-        if (termo == null || termo.isEmpty()) {
-            return repository.findByEmpresaIdAndAtivoTrue(empresa.getId(), pageable);
-        } else {
-            return repository.findByEmpresaIdAndNomeContainingIgnoreCaseAndAtivoTrue(empresa.getId(), termo, pageable);
-        }
+        // Garante que não passamos null para a query (transforma null em "")
+        String termoNome = (nome == null) ? "" : nome;
+        String termoFornecedor = (fornecedor == null) ? "" : fornecedor;
+
+        return repository.buscarPorFiltros(empresa.getId(), termoNome, termoFornecedor, pageable);
     }
+    
+    // ... restante dos métodos (salvar, excluir...)
 
     public Produto buscarPorId(Long id) {
         Empresa empresa = securityService.getEmpresaLogada();

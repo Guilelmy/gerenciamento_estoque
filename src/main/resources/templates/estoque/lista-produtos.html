@@ -1,0 +1,27 @@
+<div
+  class="bg-white border border-gray-300 rounded-md shadow-2xl max-h-60 overflow-y-auto mt-1 w-full"
+>
+  <div
+    th:each="p : ${produtosBusca}"
+    class="px-4 py-2 hover:bg-blue-100 cursor-pointer border-b border-gray-100 last:border-none transition-colors"
+    th:data-id="${p.id}"
+    th:data-nome="${p.nome}"
+    onclick="window.selecionarProduto(this)"
+  >
+    <span
+      class="font-bold text-gray-800 block pointer-events-none"
+      th:text="${p.nome}"
+    ></span>
+    <span
+      class="text-xs text-gray-500 block pointer-events-none"
+      th:text="${p.fornecedor?.nome}"
+    ></span>
+  </div>
+
+  <div
+    th:if="${#lists.isEmpty(produtosBusca)}"
+    class="p-3 text-gray-500 text-sm text-center"
+  >
+    Nenhum produto encontrado.
+  </div>
+</div>
