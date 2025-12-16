@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html lang="pt-br" 
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGE - Sistema de Gestão de Estoque</title>
-    <meta name="_csrf" th:content="${_csrf.token}" />
-    <meta name="_csrf_header" th:content="${_csrf.headerName}" />
+
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
 
     <style>
-        .htmx-indicator {
-            opacity: 0;
-            transition: opacity 200ms ease-in;
-        }
-
-        .htmx-request .htmx-indicator {
-            opacity: 1;
-        }
-
-        .htmx-request.htmx-indicator {
-            opacity: 1;
-        }
+        .htmx-indicator { opacity: 0; transition: opacity 200ms ease-in; }
+        .htmx-request .htmx-indicator { opacity: 1; }
+        .htmx-request.htmx-indicator { opacity: 1; }
     </style>
 </head>
 
@@ -31,32 +25,34 @@
 
     <nav class="bg-slate-800 p-4 text-white shadow-lg z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold flex items-center gap-2" hx-target="#main-content"
-                hx-select="#main-content" hx-swap="outerHTML">
-                Gerenciamento de Estoque
+            <a href="/" class="text-xl font-bold flex items-center gap-2"
+               hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML">
+                 Gerenciamento de Estoque
             </a>
-
-            <div class="hidden md:flex space-x-6" hx-target="#main-content" hx-select="#main-content"
-                hx-swap="outerHTML">
-
-                <a href="/" class="hover:text-blue-300 transition"
-                    th:classappend="${currentPage == 'dashboard'} ? 'text-blue-400 font-bold' : ''">
-                    Dashboard
+            
+            <div class="hidden md:flex space-x-6" 
+                 hx-target="#main-content" 
+                 hx-select="#main-content" 
+                 hx-swap="outerHTML">
+                 
+                <a href="/" class="hover:text-blue-300 transition" 
+                   th:classappend="${currentPage == 'dashboard'} ? 'text-blue-400 font-bold' : ''">
+                   Dashboard
                 </a>
-
+                
                 <a href="/fornecedores" class="hover:text-blue-300 transition"
-                    th:classappend="${currentPage == 'fornecedores'} ? 'text-blue-400 font-bold' : ''">
-                    Fornecedores
+                   th:classappend="${currentPage == 'fornecedores'} ? 'text-blue-400 font-bold' : ''">
+                   Fornecedores
                 </a>
-
+                
                 <a href="/produtos" class="hover:text-blue-300 transition"
-                    th:classappend="${currentPage == 'produtos'} ? 'text-blue-400 font-bold' : ''">
-                    Produtos
+                   th:classappend="${currentPage == 'produtos'} ? 'text-blue-400 font-bold' : ''">
+                   Produtos
                 </a>
-
+                
                 <a href="/estoque" class="hover:text-blue-300 transition"
-                    th:classappend="${currentPage == 'estoque'} ? 'text-blue-400 font-bold' : ''">
-                    Estoque
+                   th:classappend="${currentPage == 'estoque'} ? 'text-blue-400 font-bold' : ''">
+                   Estoque
                 </a>
             </div>
 
@@ -64,23 +60,23 @@
                 <span class="text-sm text-gray-300 hidden sm:inline" sec:authorize="isAuthenticated()">
                     Olá, <span class="font-bold text-white" sec:authentication="principal.empresa.nome">Empresa</span>
                 </span>
-
+                
                 <form th:action="@{/logout}" method="post" class="inline">
-                    <button type="submit"
-                        class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm transition text-white"
-                        hx-boost="false"> Sair
+                    <button type="submit" 
+                            class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm transition text-white" 
+                            hx-boost="false">
+                       Sair
                     </button>
                 </form>
             </div>
         </div>
     </nav>
 
-    <div id="alert-container" class="fixed top-20 right-5 z-50 w-full max-w-sm flex flex-col gap-2 pointer-events-none">
-    </div>
+    <div id="alert-container" class="fixed top-20 right-5 z-50 w-full max-w-sm flex flex-col gap-2 pointer-events-none"></div>
 
     <main class="container mx-auto flex-grow p-6">
         <div id="main-content" layout:fragment="conteudo">
-        </div>
+            </div>
     </main>
 
     <footer class="bg-slate-900 text-gray-400 py-6 mt-auto">
@@ -88,6 +84,7 @@
             <p>&copy; 2025 Sistema de Gestão de Estoque</p>
         </div>
     </footer>
+
     <script>
         document.body.addEventListener('htmx:configRequest', (evt) => {
             const csrfHeader = document.querySelector('meta[name="_csrf_header"]');
@@ -98,9 +95,36 @@
             }
         });
     </script>
+
     <script>
+        // MÁSCARAS
+        document.addEventListener("DOMContentLoaded", function() {
+            aplicarMascaras();
+            document.body.addEventListener('htmx:afterSwap', function(evt) { aplicarMascaras(); });
+        });
+
+        function aplicarMascaras() {
+            const cnpjs = document.querySelectorAll('.mask-cnpj');
+            cnpjs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+                    e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');
+                });
+            });
+            const phones = document.querySelectorAll('.mask-phone');
+            phones.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let v = e.target.value.replace(/\D/g,"");
+                    v = v.replace(/^(\d{2})(\d)/g,"($1) $2"); 
+                    v = v.replace(/(\d)(\d{4})$/,"$1-$2"); 
+                    e.target.value = v;
+                });
+            });
+        }
+
+        // TOASTS
         if (!window.toastListenerAdded) {
-            document.body.addEventListener("mostrarMensagem", function (evt) {
+            document.body.addEventListener("mostrarMensagem", function(evt){
                 const tipo = evt.detail.tipo;
                 const texto = evt.detail.mensagem;
                 let corBg = tipo === 'erro' ? 'bg-red-500' : 'bg-green-500';
@@ -119,9 +143,8 @@
                     setTimeout(() => { toast.remove(); }, 300);
                 }, 4000);
             });
-            window.toastListenerAdded = true;
+            window.toastListenerAdded = true; 
         }
     </script>
 </body>
-
 </html>

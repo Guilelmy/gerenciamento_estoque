@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout}">
-
 <head>
     <title>Fornecedor</title>
 </head>
-
 <body>
 
     <div id="main-content" layout:fragment="conteudo">
@@ -15,33 +13,49 @@
                 th:text="${fornecedor.id == null ? 'Novo Fornecedor' : 'Editar Fornecedor'}">
             </h2>
 
-            <form hx-post="/fornecedores/salvar" hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-                action="/fornecedores/salvar" method="post" th:object="${fornecedor}" class="space-y-4">
+            <form hx-post="/fornecedores/salvar" 
+                  hx-target="#main-content" 
+                  hx-select="#main-content" 
+                  hx-swap="outerHTML"
+                  method="post" 
+                  th:object="${fornecedor}" 
+                  class="space-y-4">
+                  
+                <div th:if="${#fields.hasGlobalErrors()}" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+                </div>
+
                 <input type="hidden" th:field="*{id}" />
 
                 <div>
                     <label class="block text-sm font-bold text-gray-700">Nome da Empresa</label>
-                    <input type="text" th:field="*{nome}" required
-                        class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500">
+                    <input type="text" th:field="*{nome}" 
+                           th:classappend="${#fields.hasErrors('nome')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                           class="mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500">
+                    <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-red-500 text-xs italic mt-1"></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-bold text-gray-700">CNPJ</label>
-                        <input type="text" th:field="*{cnpj}" required
-                            class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500">
+                        <input type="text" th:field="*{cnpj}" 
+                               th:classappend="${#fields.hasErrors('cnpj')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                               class="mask-cnpj mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500">
+                        <p th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-red-500 text-xs italic mt-1"></p>
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-gray-700">Telefone</label>
-                        <input type="text" th:field="*{telefone}"
-                            class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500">
+                        <input type="text" th:field="*{telefone}" 
+                               class="mask-phone mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-gray-700">E-mail</label>
-                    <input type="email" th:field="*{email}" required
-                        class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500">
+                    <input type="email" th:field="*{email}" 
+                           th:classappend="${#fields.hasErrors('email')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                           class="mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500">
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-500 text-xs italic mt-1"></p>
                 </div>
 
                 <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-end gap-3">
@@ -59,5 +73,4 @@
         </div>
     </div>
 </body>
-
 </html>

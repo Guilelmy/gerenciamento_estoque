@@ -1,6 +1,7 @@
 package web.controle_estoque.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import web.controle_estoque.model.Produto;
 import web.controle_estoque.service.FornecedorService;
@@ -20,36 +22,26 @@ public class ProdutoController {
 
     private final ProdutoService service;
     private final FornecedorService fornecedorService;
-
     private final int ITENS_POR_PAGINA = 10;
 
+    // ... index, busca, indexPagina mantêm-se iguais ...
     @GetMapping
-    public String index(@RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "") String termo,
-            Model model) {
+    public String index(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String termo, Model model) {
         return buscaPagina(page, termo, model, false);
     }
-
+    
     @GetMapping("/busca")
-    public String busca(@RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "") String termo,
-            Model model) {
+    public String busca(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String termo, Model model) {
         return buscaPagina(page, termo, model, true);
     }
 
     private String buscaPagina(int page, String termo, Model model, boolean apenasFragmento) {
         Pageable pageable = PageRequest.of(page, ITENS_POR_PAGINA, Sort.by("nome"));
         Page<Produto> pageResultado = service.listar(pageable, termo);
-
         model.addAttribute("produtos", pageResultado);
         model.addAttribute("termoAtual", termo);
-
-        if (apenasFragmento) {
-            return "produtos/index :: tabela-produtos";
-        } else {
-            model.addAttribute("currentPage", "produtos");
-            return "produtos/index";
-        }
+        if (apenasFragmento) return "produtos/index :: tabela-produtos";
+        else { model.addAttribute("currentPage", "produtos"); return "produtos/index"; }
     }
 
     @GetMapping("/novo")
@@ -67,37 +59,39 @@ public class ProdutoController {
         return "produtos/form";
     }
 
+    // --- VALIDAÇÃO AQUI ---
     @PostMapping("/salvar")
-    public String salvar(Produto produto, HttpServletResponse response, Model model) {
-        boolean isNovo = (produto.getId() == null);
+    public String salvar(@Valid Produto produto, BindingResult result, HttpServletResponse response, Model model) {
+        // Se houver erro de validação
+        if (result.hasErrors()) {
+            // Recarrega a lista de fornecedores pois o select precisa dela
+            model.addAttribute("listaFornecedores", fornecedorService.listarTodos());
+            return "produtos/form";
+        }
+
         try {
+            boolean isNovo = (produto.getId() == null);
             service.salvar(produto); 
-            String mensagem = isNovo ? "Produto cadastrado com sucesso!" : "Produto atualizado com sucesso!";
+            
+            String mensagem = isNovo ? "Produto cadastrado!" : "Produto atualizado!";
             dispararToast(response, "sucesso", mensagem);
             response.addHeader("HX-Push-Url", "/produtos");
 
             return buscaPagina(0, "", model, false);
         } catch (Exception e) {
-            dispararToast(response, "erro", "Erro ao salvar: " + e.getMessage());
-            return buscaPagina(0, "", model, false);
+            // Erro genérico
+            model.addAttribute("listaFornecedores", fornecedorService.listarTodos());
+            result.reject("global", "Erro ao salvar: " + e.getMessage());
+            return "produtos/form";
         }
     }
 
+    // ... excluir igual ...
     @DeleteMapping("/{id}")
-    public String excluir(@PathVariable Long id,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "") String termo,
-            Model model,
-            HttpServletResponse response) {
-
+    public String excluir(@PathVariable Long id, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "") String termo, Model model, HttpServletResponse response) {
         boolean sucesso = service.desativar(id);
-
-        if (sucesso) {
-            dispararToast(response, "sucesso", "Produto desativado com sucesso!");
-        } else {
-            dispararToast(response, "erro", "Erro ao desativar ou produto não encontrado.");
-        }
-
+        if (sucesso) dispararToast(response, "sucesso", "Produto desativado!");
+        else dispararToast(response, "erro", "Erro ao desativar.");
         return buscaPagina(page, termo, model, true);
     }
 

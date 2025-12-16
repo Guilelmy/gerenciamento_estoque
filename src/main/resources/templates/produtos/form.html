@@ -22,27 +22,36 @@
               th:object="${produto}" 
               class="space-y-4">
             
+            <div th:if="${#fields.hasGlobalErrors()}" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+            </div>
+            
             <input type="hidden" th:field="*{id}" />
 
             <div>
                 <label class="block text-sm font-bold text-gray-700">Nome do Produto</label>
-                <input type="text" th:field="*{nome}" required 
-                       class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500"
+                <input type="text" th:field="*{nome}" 
+                       th:classappend="${#fields.hasErrors('nome')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                       class="mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500"
                        placeholder="Ex: Teclado Mecânico">
+                <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-red-500 text-xs italic mt-1"></p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-bold text-gray-700">Preço (R$)</label>
-                    <input type="number" step="0.01" min="0" th:field="*{preco}" required 
-                           class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500"
-                           placeholder="0,00">
+                    <input type="text" th:field="*{preco}" 
+                           th:classappend="${#fields.hasErrors('preco')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                           class="mask-money mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500"
+                           placeholder="0.00">
+                    <p th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}" class="text-red-500 text-xs italic mt-1"></p>
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-gray-700">Fornecedor</label>
-                    <select th:field="*{fornecedor}" required 
-                            class="mt-1 block w-full rounded border-gray-300 shadow-sm p-2 border focus:ring-blue-500 bg-white">
+                    <select th:field="*{fornecedor}" 
+                            th:classappend="${#fields.hasErrors('fornecedor')} ? 'border-red-500 ring-red-500' : 'border-gray-300'"
+                            class="mt-1 block w-full rounded shadow-sm p-2 border focus:ring-blue-500 bg-white">
                         <option value="" disabled selected>Selecione um fornecedor...</option>
                         
                         <option th:each="f : ${listaFornecedores}" 
@@ -50,6 +59,7 @@
                                 th:text="${f.nome}">
                         </option>
                     </select>
+                    <p th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}" class="text-red-500 text-xs italic mt-1"></p>
                 </div>
             </div>
 
