@@ -27,4 +27,7 @@ public interface ItemEstoqueRepository extends JpaRepository<ItemEstoque, Long> 
 
     @Query("SELECT SUM(i.quantidadeAtual * i.produto.preco) FROM ItemEstoque i WHERE i.empresa.id = :empresaId")
     Double valorTotalEstoque(@Param("empresaId") Long empresaId);
+
+    @Query("SELECT i FROM ItemEstoque i WHERE i.empresa.id = :empresaId AND i.quantidadeAtual <= i.quantidadeMinima")
+    Page<ItemEstoque> findItensCriticos(@Param("empresaId") Long empresaId, Pageable pageable);
 }

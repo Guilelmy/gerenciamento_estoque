@@ -25,22 +25,28 @@ public class ItemEstoqueController {
     @GetMapping
     public String index(@RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "") String termo,
+            @RequestParam(defaultValue = "false") boolean criticos,
             Model model) {
-        return buscaPagina(page, termo, model, false);
+        return buscaPagina(page, termo, criticos, model, false);
     }
 
     @GetMapping("/busca")
     public String busca(@RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "") String termo,
+            @RequestParam(defaultValue = "false") boolean criticos,
             Model model) {
-        return buscaPagina(page, termo, model, true);
+        return buscaPagina(page, termo, criticos, model, true);
     }
 
-    private String buscaPagina(int page, String termo, Model model, boolean apenasFragmento) {
+    private String buscaPagina(int page, String termo, boolean criticos, Model model, boolean apenasFragmento) {
         Pageable pageable = PageRequest.of(page, ITENS_POR_PAGINA, Sort.by("produto.nome"));
-        Page<ItemEstoque> pageResultado = service.listar(pageable, termo);
+
+        Page<ItemEstoque> pageResultado = service.listar(pageable, termo, criticos);
+
         model.addAttribute("itensEstoque", pageResultado);
         model.addAttribute("termoAtual", termo);
+        model.addAttribute("filtroCriticos", criticos);
+
         if (apenasFragmento) {
             return "estoque/index :: tabela-estoque";
         } else {
@@ -65,10 +71,12 @@ public class ItemEstoqueController {
             service.criarNovoItem(produtoId, quantidadeInicial, quantidadeMinima);
             dispararToast(response, "sucesso", "Produto adicionado!");
             response.addHeader("HX-Push-Url", "/estoque");
-            return buscaPagina(0, "", model, false);
+            // CORRIGIDO: Adicionado 'false' para o parâmetro criticos
+            return buscaPagina(0, "", false, model, false);
         } catch (IllegalArgumentException e) {
             dispararToast(response, "erro", e.getMessage());
-            return buscaPagina(0, "", model, true);
+            // CORRIGIDO: Adicionado 'false'
+            return buscaPagina(0, "", false, model, true);
         }
     }
 
@@ -87,7 +95,9 @@ public class ItemEstoqueController {
     @PostMapping("/movimentar")
     public String realizarMovimentacao(@RequestParam Long itemId, @RequestParam String tipo,
             @RequestParam Integer quantidade, @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "") String termo, HttpServletResponse response, Model model) {
+            @RequestParam(defaultValue = "") String termo, 
+            // Dica: Se quiser manter o filtro após movimentar, adicione @RequestParam boolean criticos aqui
+            HttpServletResponse response, Model model) {
         try {
             if ("entrada".equals(tipo))
                 service.realizarEntrada(itemId, quantidade);
@@ -97,7 +107,8 @@ public class ItemEstoqueController {
         } catch (Exception e) {
             dispararToast(response, "erro", e.getMessage());
         }
-        return buscaPagina(page, termo, model, true);
+        // CORRIGIDO: Adicionado 'false' (reseta o filtro após mover, ou passe a variável se a receber)
+        return buscaPagina(page, termo, false, model, true);
     }
 
     @GetMapping("/config/{id}")
@@ -111,6 +122,7 @@ public class ItemEstoqueController {
             HttpServletResponse response, Model model) {
         service.salvarConfiguracao(itemId, quantidadeMinima);
         dispararToast(response, "sucesso", "Configuração salva!");
-        return buscaPagina(0, "", model, true);
+        // CORRIGIDO: Adicionado 'false'
+        return buscaPagina(0, "", false, model, true);
     }
 }

@@ -1,101 +1,208 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-      layout:decorate="~{layout}">
-<head>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+  layout:decorate="~{layout}"
+>
+  <head>
     <title>Dashboard - SGE</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="main-content" layout:fragment="conteudo">
-        
-        <div class="mb-8 flex justify-between items-end">
+      <div class="mb-8 flex justify-between items-end">
+        <div>
+          <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+          <p class="text-gray-600">Visão geral do sistema</p>
+        </div>
+
+        <a
+          href="/estoque"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 shadow transition flex items-center gap-2 cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+            />
+          </svg>
+          Gerenciar Estoque
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <a
+          href="/produtos"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500 hover:shadow-md transition cursor-pointer group"
+        >
+          <div class="flex items-center justify-between">
             <div>
-                <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
-                <p class="text-gray-600">Visão geral do sistema</p>
+              <h3
+                class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-blue-600"
+              >
+                Produtos
+              </h3>
+              <p
+                class="text-2xl font-bold text-gray-800"
+                th:text="${totalProdutos ?: 0}"
+              >
+                0
+              </p>
             </div>
-            
-            <a href="/estoque" 
-               hx-target="#main-content" 
-               hx-select="#main-content" 
-               hx-swap="outerHTML"
-               class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 shadow transition flex items-center gap-2 cursor-pointer">
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
-               </svg>
-               Gerenciar Estoque
-            </a>
-        </div>
+            <div class="text-blue-200 group-hover:text-blue-500 transition">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-10 h-10"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            
-            <a href="/produtos" hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-               class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500 hover:shadow-md transition cursor-pointer group">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-blue-600">Produtos</h3>
-                        <p class="text-2xl font-bold text-gray-800" th:text="${totalProdutos ?: 0}">0</p>
-                    </div>
-                    <div class="text-blue-200 group-hover:text-blue-500 transition">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
-                    </div>
-                </div>
-            </a>
+        <a
+          href="/fornecedores"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-white p-6 rounded-lg shadow border-l-4 border-indigo-500 hover:shadow-md transition cursor-pointer group"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <h3
+                class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-indigo-600"
+              >
+                Fornecedores
+              </h3>
+              <p
+                class="text-2xl font-bold text-gray-800"
+                th:text="${totalFornecedores ?: 0}"
+              >
+                0
+              </p>
+            </div>
+            <div class="text-indigo-200 group-hover:text-indigo-500 transition">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-10 h-10"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5l1.25-11.25a2.25 2.25 0 012.247-2.118H18.75a2.25 2.25 0 012.247 2.118l1.25 11.25m-18 0h15.75"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
 
-            <a href="/fornecedores" hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-               class="bg-white p-6 rounded-lg shadow border-l-4 border-indigo-500 hover:shadow-md transition cursor-pointer group">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-indigo-600">Fornecedores</h3>
-                        <p class="text-2xl font-bold text-gray-800" th:text="${totalFornecedores ?: 0}">0</p>
-                    </div>
-                    <div class="text-indigo-200 group-hover:text-indigo-500 transition">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5l1.25-11.25a2.25 2.25 0 012.247-2.118H18.75a2.25 2.25 0 012.247 2.118l1.25 11.25m-18 0h15.75" /></svg>
-                    </div>
-                </div>
-            </a>
+        <a
+          href="/estoque"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500 hover:shadow-md transition cursor-pointer group"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <h3
+                class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-green-600"
+              >
+                Valor em Estoque
+              </h3>
+              <p class="text-2xl font-bold text-gray-800">
+                R$
+                <span
+                  th:text="${#numbers.formatDecimal(valorTotalEstoque, 1, 'POINT', 2, 'COMMA')}"
+                  >0,00</span
+                >
+              </p>
+            </div>
+            <div class="text-green-200 group-hover:text-green-500 transition">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-10 h-10"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
 
-            <a href="/estoque" hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-               class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500 hover:shadow-md transition cursor-pointer group">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-green-600">Valor em Estoque</h3>
-                        <p class="text-2xl font-bold text-gray-800">
-                            R$ <span th:text="${#numbers.formatDecimal(valorTotalEstoque, 1, 'POINT', 2, 'COMMA')}">0,00</span>
-                        </p>
-                    </div>
-                    <div class="text-green-200 group-hover:text-green-500 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </a>
+        <a
+          href="/estoque?criticos=true"
+          hx-target="#main-content"
+          hx-select="#main-content"
+          hx-swap="outerHTML"
+          class="bg-white p-6 rounded-lg shadow border-l-4 border-red-500 hover:shadow-md transition cursor-pointer group"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <h3
+                class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-red-600"
+              >
+                Itens Críticos
+              </h3>
+              <p
+                class="text-2xl font-bold text-red-600"
+                th:text="${totalItensCriticos ?: 0}"
+              >
+                0
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
 
-            <a href="/estoque" hx-target="#main-content" hx-select="#main-content" hx-swap="outerHTML"
-               class="bg-white p-6 rounded-lg shadow border-l-4 border-red-500 hover:shadow-md transition cursor-pointer group">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-gray-500 text-xs font-bold uppercase tracking-wider group-hover:text-red-600">Itens Críticos</h3>
-                        <p class="text-2xl font-bold text-red-600" th:text="${totalItensCriticos ?: 0}">0</p>
-                    </div>
-                    <div class="text-red-200 group-hover:text-red-500 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                        </svg>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="bg-white p-8 rounded shadow text-center py-20 border border-gray-100">
-            <h2 class="text-xl text-gray-700 font-semibold mb-2">
-                Bem-vindo, <span sec:authentication="principal.empresa.nome" class="text-blue-600">Empresa</span>!
-            </h2>
-            <p class="text-gray-500">Utilize o menu superior para navegar entre os módulos.</p>
-        </div>
+      <div
+        class="bg-white p-8 rounded shadow text-center py-20 border border-gray-100"
+      >
+        <h2 class="text-xl text-gray-700 font-semibold mb-2">
+          Bem-vindo,
+          <span
+            sec:authentication="principal.empresa.nome"
+            class="text-blue-600"
+            >Empresa</span
+          >!
+        </h2>
+        <p class="text-gray-500">
+          Utilize o menu superior para navegar entre os módulos.
+        </p>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>

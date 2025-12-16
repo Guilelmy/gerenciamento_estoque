@@ -1,7 +1,7 @@
 package web.controle_estoque.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.Valid; // Importante
+import jakarta.validation.Valid; 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult; // Importante
+import org.springframework.validation.BindingResult; 
 import org.springframework.web.bind.annotation.*;
 import web.controle_estoque.model.Fornecedor;
 import web.controle_estoque.service.FornecedorService;
@@ -21,10 +21,6 @@ public class FornecedorController {
 
     private final FornecedorService service;
     private final int ITENS_POR_PAGINA = 10;
-
-    // ... métodos index, busca e novo mantêm-se iguais ...
-    // Vou colocar aqui apenas o que precisa mudar ou métodos auxiliares necessários
-
     @GetMapping
     public String index(@RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "") String termo,
@@ -65,41 +61,30 @@ public class FornecedorController {
         return "fornecedores/form";
     }
 
-    // --- AQUI ESTÁ A MUDANÇA DA VALIDAÇÃO ---
     @PostMapping("/salvar")
     public String salvar(@Valid Fornecedor fornecedor, BindingResult result, HttpServletResponse response, Model model) {
         
-        // 1. Se houver erros de anotação (@NotBlank, etc), volta pro form
         if (result.hasErrors()) {
-            // Retorna o HTML do formulário com os erros para o HTMX substituir
             return "fornecedores/form"; 
         }
 
         try {
             boolean isNovo = (fornecedor.getId() == null);
             service.salvar(fornecedor);
-
             String mensagem = isNovo ? "Fornecedor cadastrado!" : "Fornecedor atualizado!";
             dispararToast(response, "sucesso", mensagem);
             response.addHeader("HX-Push-Url", "/fornecedores");
-
-            // Se deu certo, volta para a lista
             return buscaPagina(0, "", model, false);
-
         } catch (IllegalArgumentException e) {
-            // 2. Erros de Negócio (Ex: CNPJ duplicado capturado no Service)
-            // Adiciona o erro no campo específico "cnpj" ou globalmente
             if (e.getMessage().toLowerCase().contains("cnpj")) {
                 result.rejectValue("cnpj", "error.fornecedor", e.getMessage());
             } else {
-                // Erro global se não for específico de um campo
                 result.reject("global", e.getMessage());
             }
             return "fornecedores/form";
         }
     }
 
-    // ... método excluir e buscaModal mantêm-se iguais ...
     @DeleteMapping("/{id}")
     public String excluir(@PathVariable Long id,
             @RequestParam(defaultValue = "0") int page,

@@ -1,0 +1,77 @@
+sudo docker ps
+sudo docker exec -it NOME_DO_CONTAINER psql -U postgres
+CREATE USER gerenciamento_estoque WITH PASSWORD '12345';
+CREATE DATABASE sge_db OWNER gerenciamento_estoque;
+GRANT ALL ON SCHEMA public TO gerenciamento_estoque;
+
+DO $$
+DECLARE
+    v_empresa_id BIGINT;
+    v_fornecedor_id BIGINT;
+    v_produto_id BIGINT;
+    i INT;
+BEGIN
+    -- 1. Inserir a Empresa (Usuário)
+    INSERT INTO empresa (nome, cnpj, email, senha)
+    VALUES (
+        'Super Loja 42 Ltda', 
+        '42.000.000/0001-42', 
+        'admin@loja42.com', -- Este será o login
+        '$2a$10$SlhAa7e.4KbrI5wyNE6LNexvZCNByhEDXkyJIpRYbX1G3fpj4tHKi' -- Sua senha hash
+    )
+    RETURNING id INTO v_empresa_id;
+
+    RAISE NOTICE 'Empresa criada com ID: %', v_empresa_id;
+
+    -- 2. Criar 15 Fornecedores
+    FOR i IN 1..15 LOOP
+        INSERT INTO fornecedor (nome, cnpj, telefone, email, ativo, empresa_id)
+        VALUES (
+            'Fornecedor Parceiro ' || i,
+            '00.000.' || lpad(i::text, 3, '0') || '/0001-' || lpad(i::text, 2, '0'),
+            '(11) 90000-' || lpad(i::text, 4, '0'),
+            'contato@fornecedor' || i || '.com',
+            true,
+            v_empresa_id
+        );
+    END LOOP;
+
+    -- 3. Criar 42 Produtos
+    FOR i IN 1..42 LOOP
+        -- Seleciona um fornecedor aleatório desta empresa para vincular o produto
+        SELECT id INTO v_fornecedor_id 
+        FROM fornecedor 
+        WHERE empresa_id = v_empresa_id 
+        ORDER BY random() 
+        LIMIT 1;
+
+        INSERT INTO produto (nome, descricao, preco, ativo, fornecedor_id, empresa_id)
+        VALUES (
+            'Produto Exclusivo Modelo ' || i,
+            'Descrição técnica detalhada do item número ' || i,
+            (random() * 200 + 10)::numeric(10, 2), -- Preço aleatório entre 10.00 e 210.00
+            true,
+            v_fornecedor_id,
+            v_empresa_id
+        )
+        RETURNING id INTO v_produto_id;
+
+        -- 4. Criar Item de Estoque para este produto (Para aparecer no Dashboard)
+        INSERT INTO item_estoque (
+            quantidade_atual, 
+            quantidade_minima, 
+            data_atualizacao, 
+            produto_id, 
+            empresa_id
+        ) VALUES (
+            (random() * 100)::int, -- Quantidade atual aleatória (0 a 100)
+            10,                    -- Estoque mínimo fixo em 10
+            NOW(),
+            v_produto_id,
+            v_empresa_id
+        );
+    END LOOP;
+
+    RAISE NOTICE 'Dados inseridos com sucesso!';
+END $$;
+

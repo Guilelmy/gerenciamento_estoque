@@ -13,7 +13,7 @@ import web.controle_estoque.repository.ItemEstoqueRepository;
 import web.controle_estoque.repository.ProdutoRepository;
 
 @Service
-@RequiredArgsConstructor // Isso cria o construtor automaticamente para injetar as dependências
+@RequiredArgsConstructor 
 public class ItemEstoqueService {
 
     private final ItemEstoqueRepository itemEstoqueRepository;
@@ -22,14 +22,19 @@ public class ItemEstoqueService {
 
     private final SecurityService securityService;
 
-    public Page<ItemEstoque> listar(Pageable pageable, String termo) {
-        Empresa empresa = securityService.getEmpresaLogada(); // Agora funciona
-        if (termo == null || termo.isEmpty()) {
-            return itemEstoqueRepository.findByEmpresaId(empresa.getId(), pageable);
-        } else {
-            return itemEstoqueRepository.buscarPorNomeProduto(empresa.getId(), termo, pageable);
-        }
+    public Page<ItemEstoque> listar(Pageable pageable, String termo, boolean apenasCriticos) {
+    Empresa empresa = securityService.getEmpresaLogada();
+    
+    if (apenasCriticos) {
+        return itemEstoqueRepository.findItensCriticos(empresa.getId(), pageable);
     }
+
+    if (termo == null || termo.isEmpty()) {
+        return itemEstoqueRepository.findByEmpresaId(empresa.getId(), pageable);
+    } else {
+        return itemEstoqueRepository.buscarPorNomeProduto(empresa.getId(), termo, pageable);
+    }
+}
 
     public ItemEstoque buscarPorId(Long id) {
         Empresa empresa = securityService.getEmpresaLogada();
