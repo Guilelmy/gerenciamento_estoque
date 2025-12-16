@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Acesso Negado - SGE</title>
+</head>
+<body>
+    <div layout:fragment="conteudo">
+        <div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+            
+            <img th:src="@{/images/403.png}" alt="Acesso Negado" class="w-64 mb-8 opacity-80">
+            
+            <h1 class="text-4xl font-bold text-slate-800 mb-2">Acesso Negado</h1>
+            <p class="text-gray-600 text-lg mb-8">Você não tem permissão para acessar este recurso.</p>
+            
+            <a href="/" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-md flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Voltar para o Início
+            </a>
+        </div>
+    </div>
+</body>
+</html>

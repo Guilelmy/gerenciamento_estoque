@@ -7206,3 +7206,169 @@ Caused by: java.net.BindException: Endereço já em uso
 2025-12-10T16:18:39.651-03:00  INFO 121226 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
 2025-12-10T16:18:39.657-03:00  INFO 121226 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 0.381 seconds (process running for 1760.957)
 2025-12-10T16:18:39.659-03:00  INFO 121226 --- [controle_estoque] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-12-10T18:35:34.319-03:00  INFO 273218 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 273218 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T18:35:34.325-03:00  INFO 273218 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T18:35:34.532-03:00  INFO 273218 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10T18:35:34.532-03:00  INFO 273218 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10T18:35:35.316-03:00  INFO 273218 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T18:35:35.364-03:00  INFO 273218 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
+2025-12-10T18:35:35.806-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T18:35:35.816-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T18:35:35.816-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T18:35:35.838-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T18:35:35.838-03:00  INFO 273218 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1305 ms
+2025-12-10T18:35:36.150-03:00  INFO 273218 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2025-12-10T18:35:36.247-03:00  INFO 273218 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5aeb2bfc
+2025-12-10T18:35:36.248-03:00  INFO 273218 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2025-12-10T18:35:36.266-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T18:35:36.301-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.020s)
+2025-12-10T18:35:36.334-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T18:35:36.337-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T18:35:36.640-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T18:35:37.284-03:00  INFO 273218 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T18:35:37.584-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.s.d.j.r.q.QueryEnhancerFactory         : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-10T18:35:38.053-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T18:35:38.354-03:00  INFO 273218 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T18:35:38.393-03:00  INFO 273218 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T18:35:38.745-03:00  WARN 273218 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-12-10T18:35:38.801-03:00  WARN 273218 --- [controle_estoque] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-10T18:35:38.811-03:00  INFO 273218 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T18:35:38.814-03:00  INFO 273218 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2025-12-10T18:35:38.816-03:00  INFO 273218 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2025-12-10T18:35:38.831-03:00  INFO 273218 --- [controle_estoque] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-10T18:35:38.844-03:00 ERROR 273218 --- [controle_estoque] [restartedMain] o.s.b.SpringApplication                  : Application run failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:408) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:394) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:586) ~[spring-context-6.2.12.jar:6.2.12]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[?:?]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:364) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:310) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:1009) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:630) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.7.jar:3.5.7]
+	at web.controle_estoque.ControleVacinacaoApplication.main(ControleVacinacaoApplication.java:10) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.7.jar:3.5.7]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat server
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:251) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:220) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1104) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:217) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+Caused by: java.net.BindException: Endereço já em uso
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.bind(Net.java:511) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:335) ~[?:?]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:297) ~[?:?]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:264) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1398) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1481) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:644) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1101) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:217) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:405) ~[spring-context-6.2.12.jar:6.2.12]
+	... 17 more
+
+2025-12-10T18:35:40.474-03:00  INFO 121226 --- [controle_estoque] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10T18:35:40.474-03:00  INFO 121226 --- [controle_estoque] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2025-12-10T18:35:40.475-03:00  INFO 121226 --- [controle_estoque] [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2025-12-10T18:36:50.784-03:00  INFO 121226 --- [controle_estoque] [SpringApplicationShutdownHook] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T18:36:50.787-03:00  INFO 121226 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T18:36:50.796-03:00  INFO 121226 --- [controle_estoque] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T18:36:50.798-03:00  INFO 121226 --- [controle_estoque] [SpringApplicationShutdownHook] c.z.h.HikariDataSource                   : HikariPool-20 - Shutdown initiated...
+2025-12-10T18:36:50.800-03:00  INFO 121226 --- [controle_estoque] [SpringApplicationShutdownHook] c.z.h.HikariDataSource                   : HikariPool-20 - Shutdown completed.
+2025-12-10T20:44:21.154-03:00  INFO 9694 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 9694 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-10T20:44:21.163-03:00  INFO 9694 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-10T20:44:21.437-03:00  INFO 9694 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-10T20:44:21.437-03:00  INFO 9694 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-10T20:44:22.706-03:00  INFO 9694 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-10T20:44:22.801-03:00  INFO 9694 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+2025-12-10T20:44:23.738-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-10T20:44:23.775-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-10T20:44:23.775-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-10T20:44:23.843-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-10T20:44:23.843-03:00  INFO 9694 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2406 ms
+2025-12-10T20:44:24.489-03:00  INFO 9694 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2025-12-10T20:44:24.762-03:00  INFO 9694 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c9355ff
+2025-12-10T20:44:24.763-03:00  INFO 9694 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2025-12-10T20:44:24.804-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-10T20:44:24.930-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.068s)
+2025-12-10T20:44:24.983-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-10T20:44:24.991-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-10T20:44:25.839-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-10T20:44:26.992-03:00  INFO 9694 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T20:44:27.466-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.d.j.r.q.QueryEnhancerFactory         : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-10T20:44:28.800-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-10T20:44:29.402-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-10T20:44:29.448-03:00  INFO 9694 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-10T20:44:30.349-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-10T20:44:30.545-03:00  INFO 9694 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-10T20:44:30.562-03:00  INFO 9694 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 9.757 seconds (process running for 10.521)
+2025-12-10T20:44:33.257-03:00  INFO 9694 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-10T20:44:33.257-03:00  INFO 9694 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2025-12-10T20:44:33.259-03:00  INFO 9694 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2025-12-10T20:49:54.303-03:00  INFO 9694 --- [controle_estoque] [SpringApplicationShutdownHook] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-10T20:49:54.312-03:00  INFO 9694 --- [controle_estoque] [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+2025-12-10T20:49:54.322-03:00  INFO 9694 --- [controle_estoque] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-10T20:49:54.326-03:00  INFO 9694 --- [controle_estoque] [SpringApplicationShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2025-12-10T20:49:54.332-03:00  INFO 9694 --- [controle_estoque] [SpringApplicationShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2025-12-16T10:15:45.696-03:00  INFO 30799 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Starting ControleVacinacaoApplication using Java 24.0.2 with PID 30799 (/home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque/target/classes started by guilhermy in /home/guilhermy/Área de trabalho/PWEB2_GERENCIAMENTO_ESTOQUE/controle_estoque)
+2025-12-16T10:15:45.701-03:00  INFO 30799 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-12-16T10:15:45.900-03:00  INFO 30799 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-16T10:15:45.900-03:00  INFO 30799 --- [controle_estoque] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-16T10:15:46.662-03:00  INFO 30799 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-16T10:15:46.707-03:00  INFO 30799 --- [controle_estoque] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 4 JPA repository interfaces.
+2025-12-16T10:15:47.160-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 8080 (http)
+2025-12-16T10:15:47.177-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2025-12-16T10:15:47.177-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-16T10:15:47.197-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2025-12-16T10:15:47.197-03:00  INFO 30799 --- [controle_estoque] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+2025-12-16T10:15:47.561-03:00  INFO 30799 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2025-12-16T10:15:47.694-03:00  INFO 30799 --- [controle_estoque] [restartedMain] c.z.h.p.HikariPool                       : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@575ed331
+2025-12-16T10:15:47.694-03:00  INFO 30799 --- [controle_estoque] [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2025-12-16T10:15:47.716-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.f.c.FlywayExecutor                     : Database: jdbc:postgresql://localhost:5432/sge_db (PostgreSQL 17.0)
+2025-12-16T10:15:47.771-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbValidate                     : Successfully validated 1 migration (execution time 00:00.024s)
+2025-12-16T10:15:47.794-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Current version of schema "public": 1
+2025-12-16T10:15:47.796-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.f.c.i.c.DbMigrate                      : Schema "public" is up to date. No migration necessary.
+2025-12-16T10:15:48.215-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-16T10:15:48.892-03:00  INFO 30799 --- [controle_estoque] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-16T10:15:49.136-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.d.j.r.q.QueryEnhancerFactory         : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-16T10:15:49.646-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-12-16T10:15:49.882-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 1 endpoint beneath base path '/actuator'
+2025-12-16T10:15:49.902-03:00  INFO 30799 --- [controle_estoque] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name empresaUserDetailsService
+2025-12-16T10:15:50.247-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-16T10:15:50.319-03:00  INFO 30799 --- [controle_estoque] [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 8080 (http) with context path '/'
+2025-12-16T10:15:50.331-03:00  INFO 30799 --- [controle_estoque] [restartedMain] w.c.ControleVacinacaoApplication         : Started ControleVacinacaoApplication in 5.001 seconds (process running for 5.771)
+2025-12-16T10:15:51.452-03:00  INFO 30799 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-16T10:15:51.452-03:00  INFO 30799 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2025-12-16T10:15:51.453-03:00  INFO 30799 --- [controle_estoque] [RMI TCP Connection(2)-127.0.0.1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
